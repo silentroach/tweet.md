@@ -17,7 +17,10 @@ const examplesData = fs.readdirSync(examplesPath).map(filename => {
 		})
 	);
 
-	return `[${filename}](${relativePath}) [#](https://twitter.com/${tweetData.user['screen_name']}/status/${tweetData['id_str']}) |
+	const heading = `[${filename}](${relativePath}) [#](https://twitter.com/${tweetData.user['screen_name']}/status/${tweetData['id_str']})`;
+
+	return `${heading} |
+${Array(heading.length + 1).join('-')} |
 ${render(tweetData)} |
 `;
 }).join('\n');
