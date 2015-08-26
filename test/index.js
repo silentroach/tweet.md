@@ -2,7 +2,8 @@ import fs from 'fs';
 import path from 'path';
 import assert from 'assert';
 
-import render from '../';
+// testing es6 version
+import render from '../index';
 
 describe('Renderer', () => {
 

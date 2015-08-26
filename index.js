@@ -1,13 +1,14 @@
-// [ /\//g, '\\/' ],
-// [ /\</g, '&lt;' ],
-// [ /\>/g, '&gt;' ],
-
 function escapeMarkdown(input) {
-	// escaping symbols: # * ( ) [ ] _
-	return input.replace(
-		/([#\*\(\)\[\]_])/g,
-		'\\$1'
-	);
+	return [
+
+		// escaping symbols: # * ( ) [ ] _
+		[/([#\*\(\)\[\]\_\/`])/g, '\\$1'],
+
+		// escaping less and more signs
+		[/\</g, '&lt;'],
+		[/\>/g, '&gt;']
+
+	].reduce((input, [replaceFrom, replaceTo]) => input.replace(replaceFrom, replaceTo), input);
 }
 
 function renderEntityMention(data) {
@@ -19,7 +20,7 @@ function renderEntityMedia(data) {
 }
 
 function renderEntityHashtag(data) {
-	return `[${escapeMarkdown(data.text)}](https://twitter.com/search?q=%23${data.text})`;
+	return `[#${escapeMarkdown(data.text)}](https://twitter.com/search?q=%23${data.text})`;
 }
 
 function renderEntityUrl(data) {

@@ -2,9 +2,11 @@
   "name": "tweet.md",
   "version": "0.0.0",
   "description": "Render tweet to markdown",
-  "main": "index.js",
+  "main": "index.es5.js",
   "scripts": {
-    "test": "mocha -r babel/register"
+    "transpile": "babel index.js --out-file index.es5.js",
+    "test": "mocha -r babel/register",
+    "prepublish": "npm run test && npm run transpile"
   },
   "keywords": [
     "twitter",
