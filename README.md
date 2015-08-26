@@ -1,4 +1,4 @@
-# Twitter precompiled regular expressions
+# Tweet markdown renderer
 
 [![npm](https://img.shields.io/npm/v/tweet.md.svg?style=flat-square)](https://www.npmjs.com/package/tweet.md)
 [![Travis](https://img.shields.io/travis/silentroach/tweet.md.svg?style=flat-square&label=travis)](https://travis-ci.org/silentroach/tweet.md)
