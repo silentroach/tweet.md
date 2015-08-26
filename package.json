@@ -5,8 +5,10 @@
   "main": "index.es5.js",
   "scripts": {
     "transpile": "babel index.js --out-file index.es5.js",
+    "examples": "babel-node examples.js",
     "test": "mocha -r babel/register",
-    "prepublish": "npm run test && npm run transpile"
+    "preversion": "npm run examples",
+    "prepublish": "npm run test && npm run transpile && npm run examples"
   },
   "keywords": [
     "twitter",
