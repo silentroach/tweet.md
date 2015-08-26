@@ -1,0 +1,26 @@
+{
+  "name": "tweet.md",
+  "version": "0.0.0",
+  "description": "Render tweet to markdown",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -r babel/register"
+  },
+  "keywords": [
+    "twitter",
+    "tweet",
+    "markdown",
+    "md"
+  ],
+  "homepage": "https://github.com/silentroach/tweet.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/silentroach/tweet.md"
+  },
+  "author": "Igor Kalashnikov <igor.kalashnikov@me.com> (https://github.com/silentroach)",
+  "license": "MIT",
+  "devDependencies": {
+    "babel": "^5.8.21",
+    "mocha": "^2.2.5"
+  }
+}
