@@ -27,11 +27,15 @@ var output = render(tweetObjectFromAPI);
 
 <!-- CUT -->
 
-### Tweet [610382345024204800](https://twitter.com/twitterapi/status/610382345024204800) by Twitter API (source in [examples/01-link.json](examples/01-link.json))
+### 01-link.json](examples/01-link.json)
+
+Tweet [610382345024204800](https://twitter.com/twitterapi/status/610382345024204800) by Twitter API
 
 Removing the 140 character limit from Direct Messages [twittercommunity.com\/t\/removing-the…](https://t.co/h0I2M3P2vm "https://twittercommunity.com/t/removing-the-140-character-limit-from-direct-messages/41348/")
 
-### Tweet [628296576822149120](https://twitter.com/twitter/status/628296576822149120) by Twitter (source in [examples/02-multiline.json](examples/02-multiline.json))
+### 02-multiline.json](examples/02-multiline.json)
+
+Tweet [628296576822149120](https://twitter.com/twitter/status/628296576822149120) by Twitter
 
 Tweet poems you like
 at [#TwitterPoetryClub](https://twitter.com/search?q=%23TwitterPoetryClub)
@@ -39,7 +43,9 @@ prose, sonnets and more
 
 Via [@bustle](https://twitter.com/bustle "Bustle"), learn how to wax poetic on Twitter: [bustle.com\/articles\/10068…](http://t.co/vItyyGqX7R "http://www.bustle.com/articles/100683-twitterpoetryclub-members-share-their-love-of-poetry-in-140-characters-or-less")
 
-### Tweet [633203477540380672](https://twitter.com/jsunderhood/status/633203477540380672) by Разработчик (source in [examples/03-russian.json](examples/03-russian.json))
+### 03-russian.json](examples/03-russian.json)
+
+Tweet [633203477540380672](https://twitter.com/jsunderhood/status/633203477540380672) by Разработчик
 
 Привет! С вами сегодня и всю неделю [@pepelsbey](https://twitter.com/pepelsbey "Вадим Макеев"), он же Вадим Макеев в прямом эфире из Осло, см. глобус Европы [pic.twitter.com\/clb7TLnxZS](http://t.co/clb7TLnxZS)
 
