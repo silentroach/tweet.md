@@ -15,15 +15,15 @@ function renderEntityMention(data) {
 }
 
 function renderEntityMedia(data) {
-	return `[${markdownEscape(data.display_url)}](${data.url})`;
+	return `[${escapeMarkdown(data.display_url)}](${data.url})`;
 }
 
 function renderEntityHashtag(data) {
-	return `[${markdownEscape(data.text)}](https://twitter.com/search?q=%23${data.text})`;
+	return `[${escapeMarkdown(data.text)}](https://twitter.com/search?q=%23${data.text})`;
 }
 
 function renderEntityUrl(data) {
-	return `[${markdownEscape(data.display_url)}](${data.url} "${data.expanded_url}")`;
+	return `[${escapeMarkdown(data.display_url)}](${data.url} "${data.expanded_url}")`;
 }
 
 function renderEntity(type, data) {
