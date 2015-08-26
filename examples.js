@@ -21,7 +21,9 @@ const examplesData = fs.readdirSync(examplesPath).map(filename => {
 
 Tweet [${tweetData['id_str']}](https://twitter.com/${tweetData.user['screen_name']}/status/${tweetData['id_str']}) by ${tweetData.user.name}
 
-<blockquote>${render(tweetData)}</blockquote>
+---
+${render(tweetData)}
+---
 `;
 }).join('\n');
 
