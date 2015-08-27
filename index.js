@@ -57,11 +57,14 @@ export default function render(tweet) {
 
 	Object.keys(entities).forEach(entityKey => {
 		replacements.push(
-			...entities[entityKey].map(entity => [
-				renderEntity(entityKey, entity),
-				entity.indices[0],
-				entity.indices[1]
-			])
+			...entities[entityKey]
+				.map(entity => [
+					renderEntity(entityKey, entity),
+					entity.indices[0],
+					entity.indices[1]
+				])
+				// do not add anything unknown
+				.filter(data => null !== data[0])
 		);
 	});
 
