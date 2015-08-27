@@ -1,4 +1,4 @@
-function escapeMarkdown(input) {
+function escapeMarkdownPart(input) {
 	return [
 
 		// escaping symbols: # * ( ) [ ] _ `
@@ -11,20 +11,26 @@ function escapeMarkdown(input) {
 	].reduce((input, [replaceFrom, replaceTo]) => input.replace(replaceFrom, replaceTo), input);
 }
 
+function escapeMarkdown(input) {
+	return escapeMarkdownPart(input)
+		// escaping period after number at the string start
+		.replace(/^(\d+)\./, '$1\\.');
+}
+
 function renderEntityMention(data) {
-	return `[@${escapeMarkdown(data.screen_name)}](https://twitter.com/${data.screen_name} "${data.name}")`;
+	return `[@${escapeMarkdownPart(data.screen_name)}](https://twitter.com/${data.screen_name} "${data.name}")`;
 }
 
 function renderEntityMedia(data) {
-	return `[${escapeMarkdown(data.display_url)}](${data.url})`;
+	return `[${escapeMarkdownPart(data.display_url)}](${data.url})`;
 }
 
 function renderEntityHashtag(data) {
-	return `[#${escapeMarkdown(data.text)}](https://twitter.com/search?q=%23${data.text})`;
+	return `[#${escapeMarkdownPart(data.text)}](https://twitter.com/search?q=%23${data.text})`;
 }
 
 function renderEntityUrl(data) {
-	return `[${escapeMarkdown(data.display_url)}](${data.url} "${data.expanded_url}")`;
+	return `[${escapeMarkdownPart(data.display_url)}](${data.url} "${data.expanded_url}")`;
 }
 
 function renderEntity(type, data) {
@@ -66,7 +72,7 @@ export default function render(tweet) {
 
 		if (replacement[2] < lastPos) {
 			output.push(
-				escapeMarkdown(
+				escapeMarkdownPart(
 					text.substr(
 						replacement[2],
 						lastPos - replacement[2]
