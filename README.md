@@ -2,6 +2,7 @@
 
 [![npm](https://img.shields.io/npm/v/tweet.md.svg?style=flat-square)](https://www.npmjs.com/package/tweet.md)
 [![Travis](https://img.shields.io/travis/silentroach/tweet.md.svg?style=flat-square&label=travis)](https://travis-ci.org/silentroach/tweet.md)
+[![Coveralls](https://img.shields.io/coveralls/silentroach/tweet.md.svg?style=flat-square&label=coverage)](https://coveralls.io/r/silentroach/tweet.md)
 [![David](https://img.shields.io/david/dev/silentroach/tweet.md.svg?style=flat-square&label=deps)](https://david-dm.org/silentroach/tweet.md#info=devDependencies)
 
 Render your [tweets](https://dev.twitter.com/overview/api/tweets) with [entities](https://dev.twitter.com/overview/api/entities) to beautiful markdown.
