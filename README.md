@@ -56,3 +56,11 @@ Tweet [633203477540380672](https://twitter.com/jsunderhood/status/63320347754038
 Привет! С вами сегодня и всю неделю [@pepelsbey](https://twitter.com/pepelsbey "Вадим Макеев"), он же Вадим Макеев в прямом эфире из Осло, см. глобус Европы [pic.twitter.com/clb7TLnxZS](http://t.co/clb7TLnxZS)
 - - -
 
+### [04-code.json](examples/04-code.json)
+
+Tweet [572444133740179457](https://twitter.com/jsunderhood/status/572444133740179457) by Разработчик
+
+- - -
+`capitalize(trim(string))` — композиция двух операций.
+- - -
+

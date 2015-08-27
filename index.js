@@ -1,17 +1,26 @@
 function escapeMarkdownPart(input) {
-	return [
+	let i = 0;
 
-		// escaping symbols: # * ( ) [ ] _ `
-		[/([\#\*\(\)\[\]\_\`\\])/g, '\\$1'],
+	return input.split(/(`.*?`)/g).map(part => {
+		// do not escape the code
+		if (0 !== i++ % 2) {
+			return part;
+		}
 
-		// escaping less and more signs
-		[/\</g, '&lt;'],
-		[/\>/g, '&gt;'],
+		return [
 
-		// convert line break into markdown hardbrake
-		[/\n/g, '  \n']
+			// escaping symbols: # * ( ) [ ] _ `
+			[/([\#\*\(\)\[\]\_\`\\])/g, '\\$1'],
 
-	].reduce((input, [replaceFrom, replaceTo]) => input.replace(replaceFrom, replaceTo), input);
+			// escaping less and more signs
+			[/\</g, '&lt;'],
+			[/\>/g, '&gt;'],
+
+			// convert line break into markdown hardbrake
+			[/\n/g, '  \n']
+
+		].reduce((input, [replaceFrom, replaceTo]) => input.replace(replaceFrom, replaceTo), part);
+	}).join('');
 }
 
 function escapeMarkdown(input) {
