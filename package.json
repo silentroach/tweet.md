@@ -10,7 +10,7 @@
     "prepublish": "npm run test && npm run transpile && npm run examples",
     "coverage": "rm -rf coverage/ && babel-node ./node_modules/.bin/isparta cover _mocha --report lcovonly -- -r babel/register test/*.js",
     "test": "mocha -r babel/register test/*.js",
-    "travis": "npm run test && npm run coverage && cat coverage/lcov.info | coveralls"
+    "travis": "npm run coverage && cat coverage/lcov.info | coveralls"
   },
   "keywords": [
     "twitter",
