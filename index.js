@@ -8,8 +8,8 @@ function escapeMarkdownPart(input) {
 		[/\</g, '&lt;'],
 		[/\>/g, '&gt;'],
 
-		// convert line break into html line break
-		[/\n/g, '<br />']
+		// convert line break into markdown hardbrake
+		[/\n/g, '  \n']
 
 	].reduce((input, [replaceFrom, replaceTo]) => input.replace(replaceFrom, replaceTo), input);
 }
