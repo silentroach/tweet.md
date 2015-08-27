@@ -1,8 +1,8 @@
 function escapeMarkdown(input) {
 	return [
 
-		// escaping symbols: # * ( ) [ ] _
-		[/([#\*\(\)\[\]\_\/`])/g, '\\$1'],
+		// escaping symbols: # * ( ) [ ] _ `
+		[/([\#\*\(\)\[\]\_\`\\])/g, '\\$1'],
 
 		// escaping less and more signs
 		[/\</g, '&lt;'],
