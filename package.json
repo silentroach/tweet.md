@@ -6,9 +6,11 @@
   "scripts": {
     "transpile": "babel index.js --out-file index.es5.js",
     "examples": "babel-node examples.js",
-    "test": "mocha -r babel/register",
     "preversion": "npm run examples",
-    "prepublish": "npm run test && npm run transpile && npm run examples"
+    "prepublish": "npm run test && npm run transpile && npm run examples",
+    "coverage": "rm -rf coverage/ && babel-node ./node_modules/.bin/isparta cover _mocha --report lcovonly -- -r babel/register test/*.js",
+    "test": "mocha -r babel/register test/*.js",
+    "travis": "npm run test && cat coverage/lcov.info | coveralls"
   },
   "keywords": [
     "twitter",
@@ -25,6 +27,8 @@
   "license": "MIT",
   "devDependencies": {
     "babel": "^5.8.21",
+    "coveralls": "^2.11.4",
+    "isparta": "^3.0.3",
     "mocha": "^2.2.5"
   }
 }
