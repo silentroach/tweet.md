@@ -6,7 +6,10 @@ function escapeMarkdownPart(input) {
 
 		// escaping less and more signs
 		[/\</g, '&lt;'],
-		[/\>/g, '&gt;']
+		[/\>/g, '&gt;'],
+
+		// convert line break into html line break
+		[/\n/g, '<br />']
 
 	].reduce((input, [replaceFrom, replaceTo]) => input.replace(replaceFrom, replaceTo), input);
 }
