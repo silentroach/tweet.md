@@ -32,6 +32,10 @@ function renderEntityHashtag(data) {
 	return `[#${escapeMarkdownPart(data.text)}](https://twitter.com/search?q=%23${data.text})`;
 }
 
+function renderEntitySymbol(data) {
+	return `[$${escapeMarkdownPart(data.text)}](https://twitter.com/search?q=%23${data.text}&src=ctag)`;
+}
+
 function renderEntityUrl(data) {
 	return `[${escapeMarkdownPart(data.display_url)}](${data.url} "${data.expanded_url}")`;
 }
@@ -46,6 +50,8 @@ function renderEntity(type, data) {
 			return renderEntityHashtag(data);
 		case 'urls':
 			return renderEntityUrl(data);
+		case 'symbols':
+			return renderEntitySymbol(data);
 		default:
 			return null;
 	}

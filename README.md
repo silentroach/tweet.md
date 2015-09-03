@@ -56,3 +56,11 @@ Tweet [633203477540380672](https://twitter.com/jsunderhood/status/63320347754038
 Привет! С вами сегодня и всю неделю [@pepelsbey](https://twitter.com/pepelsbey "Вадим Макеев"), он же Вадим Макеев в прямом эфире из Осло, см. глобус Европы [pic.twitter.com/clb7TLnxZS](http://t.co/clb7TLnxZS)
 - - -
 
+### [04-ctags.json](examples/04-ctags.json)
+
+Tweet [636144155106889728](https://twitter.com/drewthall/status/636144155106889728) by Drew Hall
+
+- - -
+[$APPL](https://twitter.com/search?q=%23APPL&src=ctag) set to jump this morning. General rebound in the market today. Yesterday was a good time to buy into the panic.
+- - -
+
