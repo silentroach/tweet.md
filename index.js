@@ -1,3 +1,8 @@
+// U+1F300 to U+1F3FF
+// U+1F400 to U+1F64F
+// U+1F680 to U+1F6FF
+const emoticonsRegexp = /\ud83c[\udf00-\udfff]|\ud83d[\udc00-\ude4f]|\ud83d[\ude80-\udeff]/g;
+
 function escapeMarkdownPart(input) {
 	return [
 
@@ -58,8 +63,10 @@ function renderEntity(type, data) {
 }
 
 export default function render(tweet) {
-	const { text, entities = { } } = tweet;
+	let { text } = tweet;
+	const { entities = { } } = tweet;
 	const replacements = [];
+	const emoticons = [];
 
 	Object.keys(entities).forEach(entityKey => {
 		replacements.push(
@@ -77,6 +84,12 @@ export default function render(tweet) {
 	if (0 === replacements.length) {
 		return escapeMarkdown(tweet.text);
 	}
+
+	// replacing two-byte emoticons with private use unicode symbol
+	text = text.replace(emoticonsRegexp, match => {
+		emoticons.push(match);
+		return '\u0091';
+	});
 
 	let lastPos = text.length;
 	const parts = replacements.sort((a, b) => b[1] - a[1]).map(replacement => {
@@ -106,5 +119,11 @@ export default function render(tweet) {
 		);
 	}
 
-	return parts.reverse().join('');
+	return parts
+		.reverse()
+		.join('')
+		// bringing back emoticons
+		.replace(/\u0091/g, () => {
+			return emoticons.shift();
+		});
 }
