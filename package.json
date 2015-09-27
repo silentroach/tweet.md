@@ -26,9 +26,9 @@
   "author": "Igor Kalashnikov <igor.kalashnikov@me.com> (https://github.com/silentroach)",
   "license": "MIT",
   "devDependencies": {
-    "babel": "^5.8.21",
-    "coveralls": "^2.11.4",
-    "isparta": "^3.0.3",
-    "mocha": "^2.2.5"
+    "babel": "5.8.23",
+    "coveralls": "2.11.4",
+    "isparta": "3.0.4",
+    "mocha": "2.3.3"
   }
 }
