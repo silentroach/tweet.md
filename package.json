@@ -1,6 +1,6 @@
 {
   "name": "tweet.md",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "Render tweet to markdown",
   "main": "index.es5.js",
   "scripts": {
