@@ -61,12 +61,11 @@ function renderEntity(type, data) {
 	}
 }
 
-export default function render(tweet) {
-	let { text } = tweet;
+export default function render(tweet = { }) {
+	let { text = '' } = tweet;
 	const { entities = { } } = tweet;
-	const replacements = [];
-	const emoticons = [];
 
+	const replacements = [];
 	Object.keys(entities).forEach(entityKey => {
 		replacements.push(
 			...entities[entityKey]
@@ -81,10 +80,11 @@ export default function render(tweet) {
 	});
 
 	if (0 === replacements.length) {
-		return escapeMarkdown(tweet.text);
+		return escapeMarkdown(text);
 	}
 
 	// replacing two-byte emoticons with private use unicode symbol
+	const emoticons = [];
 	text = text.replace(emoticonsRegexp, match => {
 		emoticons.push(match);
 		return '\u0091';
