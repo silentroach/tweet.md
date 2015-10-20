@@ -1,7 +1,6 @@
-// U+1F300 to U+1F3FF
-// U+1F400 to U+1F64F
-// U+1F680 to U+1F6FF
-const emoticonsRegexp = /\ud83c[\udf00-\udfff]|\ud83d[\udc00-\ude4f]|\ud83d[\ude80-\udeff]/g;
+// @see https://en.wikipedia.org/wiki/Emoji
+// 1F300..1F3FF  |  1F400..1F64F  |  1F680..1F6FF  |  2600..26FF  |  2700..27BF
+const emoticonsRegexp = /[\u{1F300}-\u{1F3FF}]|[\u{1F400}-\u{1F64F}]|[\u{1F680}-\u{1F6FF}]|[\u{2600}-\u{26FF}]|[\u{2700}-\u{27BF}]/ug;
 
 function escapeMarkdownPart(input) {
 	return [
@@ -123,7 +122,7 @@ export default function render(tweet) {
 		.reverse()
 		.join('')
 		// bringing back emoticons
-		.replace(/\u0091/g, () => {
+		.replace(/\u{0091}/ug, () => {
 			return emoticons.shift();
 		});
 }
