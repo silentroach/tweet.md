@@ -1,4 +1,4 @@
-export const input = {
+exports.input = {
 	text: 'Some text'
 };
-export const output = 'Some text';
+exports.output = 'Some text';

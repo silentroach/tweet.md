@@ -1,4 +1,4 @@
-export const input = {
+exports.input = {
 	text: 'Tweet data with some unknown entities will not break the text',
 	entities: {
 		unknown: [
@@ -9,4 +9,4 @@ export const input = {
 	}
 }
 
-export const output = 'Tweet data with some unknown entities will not break the text';
+exports.output = 'Tweet data with some unknown entities will not break the text';

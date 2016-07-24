@@ -1,4 +1,4 @@
-export const input = {
+exports.input = {
 	text: '@_h4_ done',
 	entities: {
 		hashtags: [],
@@ -14,4 +14,4 @@ export const input = {
 	}
 }
 
-export const output = '[@\\_h4\\_](https://twitter.com/_h4_ \"Наполеон Бонапарт\") done';
+exports.output = '[@\\_h4\\_](https://twitter.com/_h4_ \"Наполеон Бонапарт\") done';

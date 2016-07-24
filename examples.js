@@ -1,7 +1,7 @@
-import fs from 'fs';
-import path from 'path';
+const fs = require('fs');
+const path = require('path');
 
-import render from './index';
+const render = require('./');
 
 const readmePath = path.resolve(__dirname, 'README.md');
 const examplesPath = path.resolve(__dirname, 'examples');

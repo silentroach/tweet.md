@@ -1,4 +1,4 @@
-export const input = {
+exports.input = {
 	text: "Testing emoticons 🌞 with ⚽ links http://t.co/AOZu04FpJG",
 	entities:  {
 		urls: [ {
@@ -10,4 +10,4 @@ export const input = {
 	}
 }
 
-export const output = 'Testing emoticons 🌞 with ⚽ links [twitter.com](http://t.co/AOZu04FpJG "http://twitter.com")';
+exports.output = 'Testing emoticons 🌞 with ⚽ links [twitter.com](http://t.co/AOZu04FpJG "http://twitter.com")';

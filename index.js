@@ -61,7 +61,7 @@ function renderEntity(type, data) {
 	}
 }
 
-export default function render(tweet = { }) {
+module.exports = function(tweet = { }) {
 	let { text = '' } = tweet;
 	const { entities = { } } = tweet;
 

@@ -2,15 +2,14 @@
   "name": "tweet.md",
   "version": "1.5.2",
   "description": "Render tweet to markdown",
-  "main": "index.es5.js",
+  "main": "index.js",
   "scripts": {
-    "transpile": "babel index.js --out-file index.es5.js",
-    "examples": "babel-node examples.js",
+    "examples": "node examples.js",
     "preversion": "npm run examples",
-    "prepublish": "npm run test && npm run transpile && npm run examples",
-    "coverage": "rm -rf coverage/ && babel-node ./node_modules/.bin/isparta cover _mocha --report lcovonly -- -r babel/register test/*.js",
-    "test": "mocha -r babel/register test/*.js",
-    "travis": "npm run coverage && cat coverage/lcov.info | coveralls"
+    "prepublish": "npm run test && npm run examples",
+    "coverage": "istanbul cover _mocha test/index.js",
+    "test": "mocha test/index.js",
+    "travis": "npm run coverage; cat ./coverage/lcov.info | coveralls"
   },
   "keywords": [
     "twitter",
@@ -26,9 +25,11 @@
   "author": "Igor Kalashnikov <igor.kalashnikov@me.com> (https://github.com/silentroach)",
   "license": "MIT",
   "devDependencies": {
-    "babel": "^5.8.23",
     "coveralls": "^2.11.4",
-    "isparta": "^3.0.4",
+    "istanbul": "^0.4.4",
     "mocha": "^2.3.3"
+  },
+  "engines": {
+    "node": "^6.0.0"
   }
 }

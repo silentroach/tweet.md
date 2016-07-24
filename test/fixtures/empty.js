@@ -1,2 +1,2 @@
-export const input = '';
-export const output = '';
+exports.input = '';
+exports.output = '';

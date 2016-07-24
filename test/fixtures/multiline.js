@@ -1,6 +1,6 @@
-export const input = {
+exports.input = {
 	text: 'Something with multiple\nlines'
 }
 
-export const output = `Something with multiple  
+exports.output = `Something with multiple  
 lines`;

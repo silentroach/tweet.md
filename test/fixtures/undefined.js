@@ -1,2 +1,2 @@
-export const input = undefined;
-export const output = '';
+exports.input = undefined;
+exports.output = '';

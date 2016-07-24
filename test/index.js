@@ -1,9 +1,9 @@
-import fs from 'fs';
-import path from 'path';
-import assert from 'assert';
+const fs = require('fs');
+const path = require('path');
+const assert = require('assert');
 
 // testing es6 version
-import render from '../index';
+const render = require('../');
 
 describe('Renderer', () => {
 
