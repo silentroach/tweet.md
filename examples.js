@@ -20,9 +20,8 @@ const examplesData = fs.readdirSync(examplesPath).map(filename => {
 	return `### [${filename}](${relativePath})
 
 ${render(tweetData)}
-- - -
 `;
-}).join('\n');
+}).join('- - -\n\n');
 
 const [heading] = fs.readFileSync(readmePath, {
 	encoding: 'utf-8'

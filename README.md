@@ -49,5 +49,4 @@ Via [@bustle](https://twitter.com/bustle "Bustle"), learn how to wax poetic on T
 ### [04-ctags.json](examples/04-ctags.json)
 
 [$APPL](https://twitter.com/search?q=%23APPL&src=ctag) set to jump this morning. General rebound in the market today. Yesterday was a good time to buy into the panic.
-- - -
 
