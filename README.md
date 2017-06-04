@@ -29,17 +29,11 @@ var output = render(tweetObjectFromAPI);
 
 ### [01-link.json](examples/01-link.json)
 
-Tweet [610382345024204800](https://twitter.com/twitterapi/status/610382345024204800) by Twitter API
-
-- - -
 Removing the 140 character limit from Direct Messages [twittercommunity.com/t/removing-the…](https://t.co/h0I2M3P2vm "https://twittercommunity.com/t/removing-the-140-character-limit-from-direct-messages/41348/")
 - - -
 
 ### [02-multiline.json](examples/02-multiline.json)
 
-Tweet [628296576822149120](https://twitter.com/twitter/status/628296576822149120) by Twitter
-
-- - -
 Tweet poems you like  
 at [#TwitterPoetryClub](https://twitter.com/search?q=%23TwitterPoetryClub)  
 prose, sonnets and more  
@@ -49,17 +43,11 @@ Via [@bustle](https://twitter.com/bustle "Bustle"), learn how to wax poetic on T
 
 ### [03-russian.json](examples/03-russian.json)
 
-Tweet [633203477540380672](https://twitter.com/jsunderhood/status/633203477540380672) by Разработчик
-
-- - -
 Привет! С вами сегодня и всю неделю [@pepelsbey](https://twitter.com/pepelsbey "Вадим Макеев"), он же Вадим Макеев в прямом эфире из Осло, см. глобус Европы [pic.twitter.com/clb7TLnxZS](http://t.co/clb7TLnxZS)
 - - -
 
 ### [04-ctags.json](examples/04-ctags.json)
 
-Tweet [636144155106889728](https://twitter.com/drewthall/status/636144155106889728) by Drew Hall
-
-- - -
 [$APPL](https://twitter.com/search?q=%23APPL&src=ctag) set to jump this morning. General rebound in the market today. Yesterday was a good time to buy into the panic.
 - - -
 
