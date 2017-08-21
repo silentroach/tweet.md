@@ -43,7 +43,7 @@ Via [@bustle](https://twitter.com/bustle "Bustle"), learn how to wax poetic on T
 
 ### [03-russian.json](examples/03-russian.json)
 
-Привет! С вами сегодня и всю неделю [@pepelsbey](https://twitter.com/pepelsbey "Вадим Макеев"), он же Вадим Макеев в прямом эфире из Осло, см. глобус Европы [![pic.twitter.com/clb7TLnxZS](https://pbs.twimg.com/media/CMmXNIHWcAAwhs3.jpg)](http://t.co/clb7TLnxZS "http://twitter.com/jsunderhood/status/633203477540380672/photo/1")
+Привет! С вами сегодня и всю неделю [@pepelsbey](https://twitter.com/pepelsbey "Вадим Макеев"), он же Вадим Макеев в прямом эфире из Осло, см. глобус Европы [pic.twitter.com/clb7TLnxZS](http://t.co/clb7TLnxZS)
 - - -
 
 ### [04-ctags.json](examples/04-ctags.json)
@@ -60,10 +60,10 @@ Awesome news!
 ### [06-extended.json](examples/06-extended.json)
 
 [@jeremycloud](https://twitter.com/jeremycloud "/dev/cloud/jeremy") It's neat to have owls and raccoons around until you realize that raccoons will eat the eggs from the owl's nest 
-> My favorite photographic subject, up closer than ever before. [![pic.twitter.com/K958bKh9Sd](https://pbs.twimg.com/media/CcVSOwJVIAAKwE6.jpg)](https://t.co/K958bKh9Sd "http://twitter.com/jeremycloud/status/704059336788606976/photo/1")
+> My favorite photographic subject, up closer than ever before. [pic.twitter.com/K958bKh9Sd](https://t.co/K958bKh9Sd)
 - - -
 
 ### [07-video.json](examples/07-video.json)
 
-Damn this solar eclipse is awesome. [#SolarEclipse](https://twitter.com/search?q=%23SolarEclipse) [![pic.twitter.com/Vv5WnGpgoT](https://pbs.twimg.com/ext_tw_video_thumb/899693864172232706/pu/img/DRLBFGz0Gt4oN-4H.jpg)](https://t.co/Vv5WnGpgoT "https://twitter.com/Zisteau/status/899694160701272064/video/1")
+Damn this solar eclipse is awesome. [#SolarEclipse](https://twitter.com/search?q=%23SolarEclipse) [pic.twitter.com/Vv5WnGpgoT](https://t.co/Vv5WnGpgoT)
 
