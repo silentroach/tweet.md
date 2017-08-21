@@ -49,6 +49,11 @@ function escapeMarkdown(input) {
 		.replace(/^(\d+)\./, '$1\\.');
 }
 
+function renderQuote(data) {
+	return `
+> ${module.exports(data.quoted_status)}`;
+}
+
 function renderEntityMention(data) {
 	const url = getTwitterUrl(data.screen_name);
 
@@ -153,6 +158,13 @@ module.exports = function(tweet = { }) {
 				text.substr(0, lastPos)
 			)
 		);
+	}
+
+	if (tweet.quoted_status) {
+		// Remove the link to the quote before rendering the quote.
+		//TODO should use display_text_range instead, which would also hide other URLs.
+		parts.shift();
+		parts.unshift(renderQuote(tweet));
 	}
 
 	return parts

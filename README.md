@@ -54,4 +54,10 @@ Via [@bustle](https://twitter.com/bustle "Bustle"), learn how to wax poetic on T
 ### [05-emoji.json](examples/05-emoji.json)
 
 Keep your Tweets 💯 by adding emojis every day, but especially on [#WorldEmojiDay](https://twitter.com/search?q=%23WorldEmojiDay)! 💪😂👯
+- - -
+
+### [06-quote.json](examples/06-quote.json)
+
+Awesome news! 
+> Native video support in REST and Streaming API [twittercommunity.com/t/twitter-vide…](https://t.co/VrFm1qGZnF "https://twittercommunity.com/t/twitter-video-now-supported-in-rest-and-streaming-api/31258")
 
