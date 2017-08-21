@@ -50,17 +50,7 @@ function renderEntityUrl(data) {
 }
 
 function renderEntityMediaEnhanced(data) {
-	if (data.type === "photo") {
-		return `[![${escapeMarkdownPart(data.ext_alt_text || data.display_url)}](${data.media_url_https})](${data.url} "${data.expanded_url}")`;
-	}
-	else if (data.type === "video") {
-		const sources = data.video_info.variants.map((variant) => `<source src="${variant.url}" type="${variant.content_type}">`).join("");
-		return `<video poster="${data.media_url_https}" controls>${sources}</video>`;
-	}
-	else if (data.type === "animated_gif") {
-		const sources = data.video_info.variants.map((variant) => `<source src="${variant.url}" type="${variant.content_type}">`).join("");
-		return `<video poster="${data.media_url_https}" autoplay loop muted>${sources}</video>`;
-	}
+	return `[![${escapeMarkdownPart(data.ext_alt_text || data.display_url)}](${data.media_url_https})](${data.url} "${data.expanded_url}")`;
 }
 
 function renderEntity(type, data, options) {
