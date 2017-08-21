@@ -19,7 +19,7 @@ const examplesData = fs.readdirSync(examplesPath).map(filename => {
 
 	return `### [${filename}](${relativePath})
 
-${render(tweetData)}
+${render(tweetData, { enhancedMarkdown: true })}
 `;
 }).join('- - -\n\n');
 

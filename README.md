@@ -43,10 +43,27 @@ Via [@bustle](https://twitter.com/bustle "Bustle"), learn how to wax poetic on T
 
 ### [03-russian.json](examples/03-russian.json)
 
-Привет! С вами сегодня и всю неделю [@pepelsbey](https://twitter.com/pepelsbey "Вадим Макеев"), он же Вадим Макеев в прямом эфире из Осло, см. глобус Европы [pic.twitter.com/clb7TLnxZS](http://t.co/clb7TLnxZS)
+Привет! С вами сегодня и всю неделю [@pepelsbey](https://twitter.com/pepelsbey "Вадим Макеев"), он же Вадим Макеев в прямом эфире из Осло, см. глобус Европы [![pic.twitter.com/clb7TLnxZS](https://pbs.twimg.com/media/CMmXNIHWcAAwhs3.jpg)](http://t.co/clb7TLnxZS "http://twitter.com/jsunderhood/status/633203477540380672/photo/1")
 - - -
 
 ### [04-ctags.json](examples/04-ctags.json)
 
 [$APPL](https://twitter.com/search?q=%23APPL&src=ctag) set to jump this morning. General rebound in the market today. Yesterday was a good time to buy into the panic.
+- - -
+
+### [05-quote.json](examples/05-quote.json)
+
+Awesome news! 
+> Native video support in REST and Streaming API [twittercommunity.com/t/twitter-vide…](https://t.co/VrFm1qGZnF "https://twittercommunity.com/t/twitter-video-now-supported-in-rest-and-streaming-api/31258")
+- - -
+
+### [06-extended.json](examples/06-extended.json)
+
+[@jeremycloud](https://twitter.com/jeremycloud "/dev/cloud/jeremy") It's neat to have owls and raccoons around until you realize that raccoons will eat the eggs from the owl's nest 
+> My favorite photographic subject, up closer than ever before. [![pic.twitter.com/K958bKh9Sd](https://pbs.twimg.com/media/CcVSOwJVIAAKwE6.jpg)](https://t.co/K958bKh9Sd "http://twitter.com/jeremycloud/status/704059336788606976/photo/1")
+- - -
+
+### [07-video.json](examples/07-video.json)
+
+Damn this solar eclipse is awesome. [#SolarEclipse](https://twitter.com/search?q=%23SolarEclipse) <video poster="https://pbs.twimg.com/ext_tw_video_thumb/899693864172232706/pu/img/DRLBFGz0Gt4oN-4H.jpg" controls><source src="https://video.twimg.com/ext_tw_video/899693864172232706/pu/pl/AyUHxhfygw8YoHiQ.m3u8" type="application/x-mpegURL">,<source src="https://video.twimg.com/ext_tw_video/899693864172232706/pu/vid/180x320/vqFZP8UV_VAYMyRR.mp4" type="video/mp4">,<source src="https://video.twimg.com/ext_tw_video/899693864172232706/pu/vid/720x1280/T7DuiNzmi2yJn66y.mp4" type="video/mp4">,<source src="https://video.twimg.com/ext_tw_video/899693864172232706/pu/vid/360x640/h43MtfO6SVkB35po.mp4" type="video/mp4"></video>
 

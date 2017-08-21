@@ -24,6 +24,11 @@ function escapeMarkdown(input) {
 		.replace(/^(\d+)\./, '$1\\.');
 }
 
+function renderQuote(data, options) {
+	return `
+> ${module.exports(data.quoted_status, options)}`;
+}
+
 function renderEntityMention(data) {
 	return `[@${escapeMarkdownPart(data.screen_name)}](https://twitter.com/${data.screen_name} "${data.name}")`;
 }
@@ -44,11 +49,29 @@ function renderEntityUrl(data) {
 	return `[${escapeMarkdownPart(data.display_url)}](${data.url} "${data.expanded_url}")`;
 }
 
-function renderEntity(type, data) {
+function renderEntityMediaEnhanced(data) {
+	if (data.type === "photo") {
+		return `[![${escapeMarkdownPart(data.ext_alt_text || data.display_url)}](${data.media_url_https})](${data.url} "${data.expanded_url}")`;
+	}
+	else if (data.type === "video") {
+		const sources = data.video_info.variants.map((variant) => `<source src="${variant.url}" type="${variant.content_type}">`);
+		return `<video poster="${data.media_url_https}" controls>${sources}</video>`;
+	}
+	else if (data.type === "animated_gif") {
+		const sources = data.video_info.variants.map((variant) => `<source src="${variant.url}" type="${variant.content_type}">`);
+		return `<video poster="${data.media_url_https}" autoplay loop muted>${sources}</video>`;
+	}
+}
+
+function renderEntity(type, data, options) {
+	const { enhancedMarkdown = false } = options;
 	switch (type) {
 		case 'user_mentions':
 			return renderEntityMention(data);
 		case 'media':
+			if (enhancedMarkdown) {
+				return renderEntityMediaEnhanced(data);
+			}
 			return renderEntityMedia(data);
 		case 'hashtags':
 			return renderEntityHashtag(data);
@@ -61,16 +84,30 @@ function renderEntity(type, data) {
 	}
 }
 
-module.exports = function(tweet = { }) {
-	let { text = '' } = tweet;
-	const { entities = { } } = tweet;
+module.exports = function(tweet = { }, options = { }) {
+	let { text = '', entities = { } } = tweet;
+
+	if (tweet.extended_entities && tweet.extended_entities.media.length) {
+		entities.media = tweet.extended_entities.media;
+	}
+
+	if (tweet.extended_tweet) {
+		text = tweet.extended_tweet.full_text;
+		entities = tweet.extended_tweet.entities;
+		if (tweet.extended_tweet.extended_entities && tweet.extended_tweet.extended_entities.media.length) {
+			entities.media = tweet.extended_tweet.extended_entities.media;
+		}
+	}
+	else if (tweet.full_text) {
+		text = tweet.full_text;
+	}
 
 	const replacements = [];
 	Object.keys(entities).forEach(entityKey => {
 		replacements.push(
 			...entities[entityKey]
 				.map(entity => [
-					renderEntity(entityKey, entity),
+					renderEntity(entityKey, entity, options),
 					entity.indices[0],
 					entity.indices[1]
 				])
@@ -116,6 +153,13 @@ module.exports = function(tweet = { }) {
 				text.substr(0, lastPos)
 			)
 		);
+	}
+
+	if (tweet.quoted_status) {
+		// Remove the link to the quote before rendering the quote.
+		//TODO should use display_text_range instead, which would also hide other URLs.
+		parts.shift();
+		parts.unshift(renderQuote(tweet, options));
 	}
 
 	return parts
