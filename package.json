@@ -23,6 +23,10 @@
     "url": "https://github.com/silentroach/tweet.md"
   },
   "author": "Igor Kalashnikov <igor.kalashnikov@me.com> (https://github.com/silentroach)",
+  "contributors": [
+    "Vladimir Starkov <iamstarkov@gmail.com> (https://github.com/iamstarkov)",
+    "Martin Giger <martin@humanoids.be> (https://github.com/freaktechnik)"
+  ],
   "license": "MIT",
   "devDependencies": {
     "coveralls": "^2.11.4",
