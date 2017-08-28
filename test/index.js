@@ -13,10 +13,11 @@ describe('Renderer', () => {
 
 		fs.readdirSync(fixturesPath).forEach(filename => {
 			const filepath = path.resolve(fixturesPath, filename);
+			const data = require(filepath);
 
-			it(filename, () => {
-				const data = require(filepath);
+			const testMethod = data.only ? it.only : it;
 
+			testMethod(filename, () => {
 				assert.equal(render(data.input), data.output);
 			});
 		});

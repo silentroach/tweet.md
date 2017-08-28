@@ -62,8 +62,14 @@ function renderEntity(type, data) {
 }
 
 module.exports = function(tweet = { }) {
-	let { text = '' } = tweet;
-	const { entities = { } } = tweet;
+	const source = tweet.extended_tweet || tweet;
+
+	const entities = Object.assign({ }, source.entities);
+	let text = source.text || '';
+
+	if (source.full_text) {
+		text = source.full_text;
+	}
 
 	const replacements = [];
 	Object.keys(entities).forEach(entityKey => {
