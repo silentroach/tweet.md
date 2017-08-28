@@ -1,6 +1,30 @@
+const {
+	parse: parseUrl,
+	format: formatUrl
+} = require('url');
+
+const TwitterUrlParsed = parseUrl('https://twitter.com');
+
 // @see https://en.wikipedia.org/wiki/Emoji
 // 1F300..1F3FF  |  1F400..1F64F  |  1F680..1F6FF  |  2600..26FF  |  2700..27BF
-const emoticonsRegexp = /[\u{1F300}-\u{1F3FF}]|[\u{1F400}-\u{1F64F}]|[\u{1F680}-\u{1F6FF}]|[\u{2600}-\u{26FF}]|[\u{2700}-\u{27BF}]/ug;
+const EmoticonsRegexp = /[\u{1F300}-\u{1F3FF}]|[\u{1F400}-\u{1F64F}]|[\u{1F680}-\u{1F6FF}]|[\u{2600}-\u{26FF}]|[\u{2700}-\u{27BF}]/ug;
+
+function getTwitterUrl(pathname, query) {
+	return formatUrl(
+		Object.assign(TwitterUrlParsed, {
+			pathname, query
+		})
+	);
+}
+
+function getTwitterHashUrl(query, source) {
+	const parameters = {q: `#${query}`};
+	if (undefined !== source) {
+		parameters.src = source;
+	}
+
+	return getTwitterUrl('search', parameters);
+}
 
 function escapeMarkdownPart(input) {
 	return [
@@ -15,7 +39,10 @@ function escapeMarkdownPart(input) {
 		// convert line break into markdown hardbrake
 		[/\n/g, '  \n']
 
-	].reduce((input, [replaceFrom, replaceTo]) => input.replace(replaceFrom, replaceTo), input);
+	].reduce(
+		(input, [replaceFrom, replaceTo]) => input.replace(replaceFrom, replaceTo),
+		input
+	);
 }
 
 function escapeMarkdown(input) {
@@ -25,7 +52,9 @@ function escapeMarkdown(input) {
 }
 
 function renderEntityMention(data) {
-	return `[@${escapeMarkdownPart(data.screen_name)}](https://twitter.com/${data.screen_name} "${data.name}")`;
+	const url = getTwitterUrl(data.screen_name);
+
+	return `[@${escapeMarkdownPart(data.screen_name)}](${url} "${data.name}")`;
 }
 
 function renderEntityMedia(data) {
@@ -33,11 +62,15 @@ function renderEntityMedia(data) {
 }
 
 function renderEntityHashtag(data) {
-	return `[#${escapeMarkdownPart(data.text)}](https://twitter.com/search?q=%23${data.text})`;
+	const url = getTwitterHashUrl(data.text);
+
+	return `[#${escapeMarkdownPart(data.text)}](${url})`;
 }
 
 function renderEntitySymbol(data) {
-	return `[$${escapeMarkdownPart(data.text)}](https://twitter.com/search?q=%23${data.text}&src=ctag)`;
+	const url = getTwitterHashUrl(data.text, 'ctag');
+
+	return `[$${escapeMarkdownPart(data.text)}](${url})`;
 }
 
 function renderEntityUrl(data) {
@@ -91,7 +124,7 @@ module.exports = function(tweet = { }) {
 
 	// replacing two-byte emoticons with private use unicode symbol
 	const emoticons = [];
-	text = text.replace(emoticonsRegexp, match => {
+	text = text.replace(EmoticonsRegexp, match => {
 		emoticons.push(match);
 		return '\u0091';
 	});
