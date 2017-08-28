@@ -62,24 +62,13 @@ function renderEntity(type, data) {
 }
 
 module.exports = function(tweet = { }) {
-	let { text = '', entities = { } } = tweet;
+	const source = tweet.extended_tweet || tweet;
 
-	if (tweet.extended_entities && tweet.extended_entities.media.length) {
-		entities.media = tweet.extended_entities.media;
-	}
+	const entities = Object.assign({ }, source.entities);
+	let text = source.text || '';
 
-	if (tweet.extended_tweet) {
-		text = tweet.extended_tweet.full_text;
-		entities = tweet.extended_tweet.entities;
-		
-		if (tweet.extended_tweet.extended_entities
-			&& tweet.extended_tweet.extended_entities.media.length
-		) {
-			entities.media = tweet.extended_tweet.extended_entities.media;
-		}
-	}
-	else if (tweet.full_text) {
-		text = tweet.full_text;
+	if (source.full_text) {
+		text = source.full_text;
 	}
 
 	const replacements = [];
