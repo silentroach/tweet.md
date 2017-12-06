@@ -58,6 +58,11 @@ Keep your Tweets 💯 by adding emojis every day, but especially on [#WorldEmoji
 
 ### [06-quote.json](examples/06-quote.json)
 
-Awesome news! 
-> Native video support in REST and Streaming API [twittercommunity.com/t/twitter-vide…](https://t.co/VrFm1qGZnF "https://twittercommunity.com/t/twitter-video-now-supported-in-rest-and-streaming-api/31258")
+A nice GIF of the Performance Monitor coming to DevTools in Chrome 64 [developers.google.com/web/updates/20…](https://t.co/2xpId3DFro "https://developers.google.com/web/updates/2017/11/devtools-release-notes#perf-monitor") 
+
+> Track your site’s performance realtime with [@ChromeDevTools](https://twitter.com/ChromeDevTools "Chrome DevTools") in 3 steps:  
+>   
+> 1. CMD+SHIFT+P  
+> 2. type 'per'  
+> 3. Select 'Sh… [twitter.com/i/web/status/9…](https://t.co/UVvpIlCkrk "https://twitter.com/i/web/status/936661298603089920")
 
