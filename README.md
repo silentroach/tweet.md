@@ -54,4 +54,15 @@ Via [@bustle](https://twitter.com/bustle "Bustle"), learn how to wax poetic on T
 ### [05-emoji.json](examples/05-emoji.json)
 
 Keep your Tweets 💯 by adding emojis every day, but especially on [#WorldEmojiDay](https://twitter.com/search?q=%23WorldEmojiDay)! 💪😂👯
+- - -
+
+### [06-quote.json](examples/06-quote.json)
+
+A nice GIF of the Performance Monitor coming to DevTools in Chrome 64 [developers.google.com/web/updates/20…](https://t.co/2xpId3DFro "https://developers.google.com/web/updates/2017/11/devtools-release-notes#perf-monitor") 
+
+> Track your site’s performance realtime with [@ChromeDevTools](https://twitter.com/ChromeDevTools "Chrome DevTools") in 3 steps:  
+>   
+> 1. CMD+SHIFT+P  
+> 2. type 'per'  
+> 3. Select 'Sh… [twitter.com/i/web/status/9…](https://t.co/UVvpIlCkrk "https://twitter.com/i/web/status/936661298603089920")
 

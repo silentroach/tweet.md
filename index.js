@@ -4,8 +4,10 @@ const {
 } = require('url');
 
 const EmoticonsRegexp = require('emoji-regex')();
+const TwitterStatusIdRegexp = /\/status\/(\w+)$/;
 
-const TwitterUrlParsed = parseUrl('https://twitter.com');
+const TwitterHost = 'twitter.com';
+const TwitterUrlParsed = parseUrl(`https://${TwitterHost}`);
 
 function getTwitterUrl(pathname, query) {
 	return formatUrl(
@@ -49,6 +51,16 @@ function escapeMarkdown(input) {
 		.replace(/^(\d+)\./, '$1\\.');
 }
 
+function renderQuote(data) {
+	const content = module.exports(data)
+		.split('\n')
+		.map(row => `> ${row}`)
+		.join('\n');
+
+	return `
+${content}`;
+}
+
 function renderEntityMention(data) {
 	const url = getTwitterUrl(data.screen_name);
 
@@ -76,6 +88,8 @@ function renderEntityUrl(data) {
 }
 
 function renderEntity(type, data) {
+	if (data.skip) return;
+
 	switch (type) {
 		case 'user_mentions':
 			return renderEntityMention(data);
@@ -92,37 +106,10 @@ function renderEntity(type, data) {
 	}
 }
 
-module.exports = function(tweet = { }) {
-	const source = tweet.extended_tweet || tweet;
-
-	const entities = Object.assign({ }, source.entities);
-	let text = source.text || '';
-
-	if (source.full_text) {
-		text = source.full_text;
-	}
-
-	const replacements = [];
-	Object.keys(entities).forEach(entityKey => {
-		replacements.push(
-			...entities[entityKey]
-				.map(entity => [
-					renderEntity(entityKey, entity),
-					entity.indices[0],
-					entity.indices[1]
-				])
-				// do not add anything unknown
-				.filter(data => null !== data[0])
-		);
-	});
-
-	if (0 === replacements.length) {
-		return escapeMarkdown(text);
-	}
-
+function processText(original, replacements) {
 	// replacing two-byte emoticons with private use unicode symbol
 	const emoticons = [];
-	text = text.replace(EmoticonsRegexp, match => {
+	const text = original.replace(EmoticonsRegexp, match => {
 		emoticons.push(match);
 		return '\u0091';
 	});
@@ -162,4 +149,64 @@ module.exports = function(tweet = { }) {
 		.replace(/\u{0091}/ug, () => {
 			return emoticons.shift();
 		});
+}
+
+function getStatusIdFromUrlEntity(entity) {
+	const {expanded_url: url} = entity;
+	if (!url) return;
+
+	const parsed = parseUrl(url);
+	if (!parsed || TwitterHost !== parsed.hostname) return;
+
+	const statusMatch = parsed.path.match(TwitterStatusIdRegexp);
+	return statusMatch && statusMatch[1];
+}
+
+module.exports = function(tweet = { }) {
+	const source = tweet.extended_tweet || tweet;
+
+	const entities = Object.assign({ }, source.entities);
+	let { text = '' } = source;
+
+	if (source.full_text) {
+		text = source.full_text;
+	}
+
+	const { quoted_status: quote } = source;
+
+	const replacements = [];
+	Object.keys(entities).forEach(entityKey => {
+		const entityList = entities[entityKey];
+
+		// we should skip last link if it is a quote link
+		if (quote
+			&& 'urls' === entityKey
+			&& entityList.length > 0
+		) {
+			const lastLink = entityList[entityList.length - 1];
+
+			if (getStatusIdFromUrlEntity(lastLink) === quote.id_str) {
+				lastLink.skip = true;
+			}
+		}
+
+		replacements.push(
+			...entityList
+				.map(entity => [
+					renderEntity(entityKey, entity),
+					entity.indices[0],
+					entity.indices[1]
+				])
+				// do not add anything unknown
+				.filter(data => null !== data[0])
+		);
+	});
+
+	const output = 0 === replacements.length
+		? escapeMarkdown(text)
+		: processText(text, replacements);
+
+	return [output, quote && renderQuote(quote)]
+		.filter(Boolean)
+		.join('\n');
 }
