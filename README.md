@@ -49,4 +49,9 @@ Via [@bustle](https://twitter.com/bustle "Bustle"), learn how to wax poetic on T
 ### [04-ctags.json](examples/04-ctags.json)
 
 [$APPL](https://twitter.com/search?q=%23APPL&src=ctag) set to jump this morning. General rebound in the market today. Yesterday was a good time to buy into the panic.
+- - -
+
+### [05-emoji.json](examples/05-emoji.json)
+
+Keep your Tweets 💯 by adding emojis every day, but especially on [#WorldEmojiDay](https://twitter.com/search?q=%23WorldEmojiDay)! 💪😂👯
 
