@@ -3,11 +3,9 @@ const {
 	format: formatUrl
 } = require('url');
 
-const TwitterUrlParsed = parseUrl('https://twitter.com');
+const EmoticonsRegexp = require('emoji-regex')();
 
-// @see https://en.wikipedia.org/wiki/Emoji
-// 1F300..1F3FF  |  1F400..1F64F  |  1F680..1F6FF  |  2600..26FF  |  2700..27BF
-const EmoticonsRegexp = /[\u{1F300}-\u{1F3FF}]|[\u{1F400}-\u{1F64F}]|[\u{1F680}-\u{1F6FF}]|[\u{2600}-\u{26FF}]|[\u{2700}-\u{27BF}]/ug;
+const TwitterUrlParsed = parseUrl('https://twitter.com');
 
 function getTwitterUrl(pathname, query) {
 	return formatUrl(
