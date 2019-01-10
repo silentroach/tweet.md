@@ -37,6 +37,6 @@
     "node": "^6.0.0"
   },
   "dependencies": {
-    "emoji-regex": "^7.0.1"
+    "emoji-regex": "^7.0.3"
   }
 }
