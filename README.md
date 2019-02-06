@@ -1,8 +1,9 @@
 # Tweet markdown renderer
 
-[![npm](https://img.shields.io/npm/v/tweet.md.svg?style=flat-square)](https://www.npmjs.com/package/tweet.md)
-[![Travis](https://img.shields.io/travis/silentroach/tweet.md.svg?style=flat-square&label=travis)](https://travis-ci.org/silentroach/tweet.md)
-[![Coveralls](https://img.shields.io/coveralls/silentroach/tweet.md.svg?style=flat-square&label=coverage)](https://coveralls.io/r/silentroach/tweet.md)
+[![npm](https://img.shields.io/npm/v/tweet.md.svg)](https://www.npmjs.com/package/tweet.md)
+[![Travis](https://img.shields.io/travis/silentroach/tweet.md.svg?label=travis)](https://travis-ci.org/silentroach/tweet.md)
+[![Coveralls](https://img.shields.io/coveralls/silentroach/tweet.md.svg?label=coverage)](https://coveralls.io/r/silentroach/tweet.md)
+[![install size](https://packagephobia.now.sh/badge?p=tweet.md)](https://packagephobia.now.sh/result?p=tweet.md)
 
 Render your [tweets](https://dev.twitter.com/overview/api/tweets) with [entities](https://dev.twitter.com/overview/api/entities) to beautiful markdown.
 
