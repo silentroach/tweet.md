@@ -29,14 +29,14 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "coveralls": "^3.0.3",
+    "coveralls": "^3.0.5",
     "istanbul": "^0.4.4",
-    "mocha": "^6.0.1"
+    "mocha": "^6.2.0"
   },
   "engines": {
     "node": "^6.0.0"
   },
   "dependencies": {
-    "emoji-regex": "^7.0.3"
+    "emoji-regex": "^8.0.0"
   }
 }
