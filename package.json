@@ -29,9 +29,9 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "coveralls": "^3.0.5",
+    "coveralls": "^3.0.9",
     "istanbul": "^0.4.4",
-    "mocha": "^6.2.0"
+    "mocha": "^7.0.1"
   },
   "engines": {
     "node": ">=6.0.0"
