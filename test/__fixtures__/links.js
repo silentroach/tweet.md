@@ -1,4 +1,4 @@
-exports.input = {
+module.exports = {
   text: "http://t.co/rYdyv2gX12, http://t.co/32mCbc9Jyr",
   entities: {
     urls: [
@@ -19,6 +19,3 @@ exports.input = {
     ]
   }
 };
-
-exports.output =
-  '[webpack.github.io/docs/hot-modul…](http://t.co/rYdyv2gX12 "http://webpack.github.io/docs/hot-module-replacement-with-webpack.html"), [webpack.github.io/docs/hot-modul…](http://t.co/32mCbc9Jyr "http://webpack.github.io/docs/hot-module-replacement.html")';

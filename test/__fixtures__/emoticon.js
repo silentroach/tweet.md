@@ -1,4 +1,4 @@
-exports.input = {
+module.exports = {
   text: "Testing emoticons 🌞 with ⚽ links http://t.co/AOZu04FpJG",
   entities: {
     urls: [
@@ -11,6 +11,3 @@ exports.input = {
     ]
   }
 };
-
-exports.output =
-  'Testing emoticons 🌞 with ⚽ links [twitter.com](http://t.co/AOZu04FpJG "http://twitter.com")';

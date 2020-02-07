@@ -1,4 +1,4 @@
-exports.input = {
+module.exports = {
   text: "@_h4_ done",
   entities: {
     hashtags: [],
@@ -15,6 +15,3 @@ exports.input = {
     urls: []
   }
 };
-
-exports.output =
-  '[@\\_h4\\_](https://twitter.com/_h4_ "Наполеон Бонапарт") done';

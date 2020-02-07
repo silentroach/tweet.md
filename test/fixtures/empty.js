@@ -1,2 +1,0 @@
-exports.input = "";
-exports.output = "";

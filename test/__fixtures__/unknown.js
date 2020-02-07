@@ -1,4 +1,4 @@
-exports.input = {
+module.exports = {
   text: "Tweet data with some unknown entities will not break the text",
   entities: {
     unknown: [
@@ -8,6 +8,3 @@ exports.input = {
     ]
   }
 };
-
-exports.output =
-  "Tweet data with some unknown entities will not break the text";

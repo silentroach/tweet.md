@@ -1,4 +1,4 @@
-exports.input = {
+module.exports = {
   text: "RT @miripiruni: #TIL #nodejs http://t.co/VXj36cneyb",
   entities: {
     hashtags: [
@@ -62,6 +62,3 @@ exports.input = {
     ]
   }
 };
-
-exports.output =
-  'RT [@miripiruni](https://twitter.com/miripiruni "Slava Oliyanchuk"): [#TIL](https://twitter.com/search?q=%23TIL) [#nodejs](https://twitter.com/search?q=%23nodejs) [pic.twitter.com/VXj36cneyb](http://t.co/VXj36cneyb)';

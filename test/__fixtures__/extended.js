@@ -1,4 +1,4 @@
-exports.input = {
+module.exports = {
   text: "some original text",
   full_text: "should prefer full_text over text",
 
@@ -7,5 +7,3 @@ exports.input = {
     full_text: "should prefer extended_tweet over base"
   }
 };
-
-exports.output = "should prefer extended\\_tweet over base";

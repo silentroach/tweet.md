@@ -1,4 +1,4 @@
-exports.input = {
+module.exports = {
   text: "Some text",
   entities: {
     urls: [
@@ -13,7 +13,3 @@ exports.input = {
     text: "Some quote"
   }
 };
-
-exports.output = `Some text
-
-> Some quote`;
