@@ -1,2 +1,2 @@
 exports.input = undefined;
-exports.output = '';
+exports.output = "";

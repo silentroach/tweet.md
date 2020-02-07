@@ -30,13 +30,21 @@
   "license": "MIT",
   "devDependencies": {
     "coveralls": "^3.0.9",
+    "husky": "^4.2.1",
     "istanbul": "^0.4.4",
-    "mocha": "^7.0.1"
+    "mocha": "^7.0.1",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1"
   },
   "engines": {
     "node": ">=8.0.0"
   },
   "dependencies": {
     "emoji-regex": "^8.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   }
 }

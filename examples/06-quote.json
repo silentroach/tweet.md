@@ -13,19 +13,13 @@
         "url": "https://t.co/2xpId3DFro",
         "expanded_url": "https://developers.google.com/web/updates/2017/11/devtools-release-notes#perf-monitor",
         "display_url": "developers.google.com/web/updates/20…",
-        "indices": [
-          70,
-          93
-        ]
+        "indices": [70, 93]
       },
       {
         "url": "https://t.co/Rd9olYLtC4",
         "expanded_url": "https://twitter.com/helmutgranda/status/936661298603089920",
         "display_url": "twitter.com/helmutgranda/s…",
-        "indices": [
-          94,
-          117
-        ]
+        "indices": [94, 117]
       }
     ]
   },
@@ -50,10 +44,7 @@
             "url": "https://t.co/R8NsgAdtGV",
             "expanded_url": "https://developers.google.com/web/tools/chrome-devtools",
             "display_url": "developers.google.com/web/tools/chro…",
-            "indices": [
-              0,
-              23
-            ]
+            "indices": [0, 23]
           }
         ]
       },
@@ -118,10 +109,7 @@
           "name": "Chrome DevTools",
           "id": 2862241270,
           "id_str": "2862241270",
-          "indices": [
-            44,
-            59
-          ]
+          "indices": [44, 59]
         }
       ],
       "urls": [
@@ -129,10 +117,7 @@
           "url": "https://t.co/UVvpIlCkrk",
           "expanded_url": "https://twitter.com/i/web/status/936661298603089920",
           "display_url": "twitter.com/i/web/status/9…",
-          "indices": [
-            117,
-            140
-          ]
+          "indices": [117, 140]
         }
       ]
     },
@@ -157,10 +142,7 @@
               "url": "https://t.co/pc9mFc985s",
               "expanded_url": "http://helmutgranda.com",
               "display_url": "helmutgranda.com",
-              "indices": [
-                0,
-                23
-              ]
+              "indices": [0, 23]
             }
           ]
         },

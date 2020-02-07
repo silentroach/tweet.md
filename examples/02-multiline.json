@@ -25,10 +25,7 @@
             "url": "http://t.co/5iRhy7wTgu",
             "expanded_url": "http://blog.twitter.com/",
             "display_url": "blog.twitter.com",
-            "indices": [
-              0,
-              22
-            ]
+            "indices": [0, 22]
           }
         ]
       },
@@ -38,10 +35,7 @@
             "url": "http://t.co/qq1HEzvnrA",
             "expanded_url": "http://support.twitter.com",
             "display_url": "support.twitter.com",
-            "indices": [
-              86,
-              108
-            ]
+            "indices": [86, 108]
           }
         ]
       }
@@ -91,10 +85,7 @@
     "hashtags": [
       {
         "text": "TwitterPoetryClub",
-        "indices": [
-          24,
-          42
-        ]
+        "indices": [24, 42]
       }
     ],
     "symbols": [],
@@ -104,10 +95,7 @@
         "name": "Bustle",
         "id": 1426645165,
         "id_str": "1426645165",
-        "indices": [
-          72,
-          79
-        ]
+        "indices": [72, 79]
       }
     ],
     "urls": [
@@ -115,10 +103,7 @@
         "url": "http://t.co/vItyyGqX7R",
         "expanded_url": "http://www.bustle.com/articles/100683-twitterpoetryclub-members-share-their-love-of-poetry-in-140-characters-or-less",
         "display_url": "bustle.com/articles/10068…",
-        "indices": [
-          117,
-          139
-        ]
+        "indices": [117, 139]
       }
     ]
   },

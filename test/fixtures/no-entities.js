@@ -1,4 +1,4 @@
 exports.input = {
-	text: 'Some text'
+  text: "Some text"
 };
-exports.output = 'Some text';
+exports.output = "Some text";

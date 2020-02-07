@@ -8,10 +8,7 @@
     "hashtags": [
       {
         "text": "WorldEmojiDay",
-        "indices": [
-          65,
-          79
-        ]
+        "indices": [65, 79]
       }
     ],
     "symbols": [],
@@ -39,10 +36,7 @@
             "url": "http://t.co/Vk1NkwU8qP",
             "expanded_url": "https://support.twitter.com",
             "display_url": "support.twitter.com",
-            "indices": [
-              0,
-              22
-            ]
+            "indices": [0, 22]
           }
         ]
       },

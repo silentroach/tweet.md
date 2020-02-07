@@ -25,10 +25,7 @@
             "url": "https://t.co/TqpzZziYPM",
             "expanded_url": "https://jsunderhood.ru",
             "display_url": "jsunderhood.ru",
-            "indices": [
-              0,
-              23
-            ]
+            "indices": [0, 23]
           }
         ]
       },
@@ -85,22 +82,10 @@
       "type": "Polygon",
       "coordinates": [
         [
-          [
-            10.4914682,
-            59.8097794
-          ],
-          [
-            10.9515836,
-            59.8097794
-          ],
-          [
-            10.9515836,
-            60.1350316
-          ],
-          [
-            10.4914682,
-            60.1350316
-          ]
+          [10.4914682, 59.8097794],
+          [10.9515836, 59.8097794],
+          [10.9515836, 60.1350316],
+          [10.4914682, 60.1350316]
         ]
       ]
     },
@@ -119,10 +104,7 @@
         "name": "Вадим Макеев",
         "id": 26370682,
         "id_str": "26370682",
-        "indices": [
-          36,
-          46
-        ]
+        "indices": [36, 46]
       }
     ],
     "urls": [],
@@ -130,10 +112,7 @@
       {
         "id": 633203474394673200,
         "id_str": "633203474394673152",
-        "indices": [
-          109,
-          131
-        ],
+        "indices": [109, 131],
         "media_url": "http://pbs.twimg.com/media/CMmXNIHWcAAwhs3.jpg",
         "media_url_https": "https://pbs.twimg.com/media/CMmXNIHWcAAwhs3.jpg",
         "url": "http://t.co/clb7TLnxZS",
@@ -170,10 +149,7 @@
       {
         "id": 633203474394673200,
         "id_str": "633203474394673152",
-        "indices": [
-          109,
-          131
-        ],
+        "indices": [109, 131],
         "media_url": "http://pbs.twimg.com/media/CMmXNIHWcAAwhs3.jpg",
         "media_url_https": "https://pbs.twimg.com/media/CMmXNIHWcAAwhs3.jpg",
         "url": "http://t.co/clb7TLnxZS",
