@@ -11,6 +11,9 @@
     "test": "jest",
     "travis": "npm run coverage; cat ./coverage/lcov.info | coveralls"
   },
+  "files": [
+    "index.js"
+  ],
   "keywords": [
     "twitter",
     "tweet",
