@@ -4,6 +4,17 @@ exports[`render fixtures ctags.js 1`] = `"[$APPL](https://twitter.com/search?q=%
 
 exports[`render fixtures emoticon.js 1`] = `"Testing emoticons 🌞 with ⚽ links [twitter.com](http://t.co/AOZu04FpJG \\"http://twitter.com\\")"`;
 
+exports[`render fixtures emoticon2.js 1`] = `
+"Twitter libraries are a great way to use our API. Did you know:  
+  
+✨ 100+ libraries support the Twitter API  
+✨ In 25+ programming languages 🐍☕️♦️   
+  
+Explore our curated list of community built libraries 📚  
+  
+[developer.twitter.com/en/docs/develo…](https://t.co/mgXiWmt9SY \\"https://developer.twitter.com/en/docs/developer-utilities/twitter-libraries\\")"
+`;
+
 exports[`render fixtures escaping.js 1`] = `"Just\\\\[\\\\] \\\\*test \\\\_the \\\\(mark&gt;&lt;down\\\\) \\\\\\\\ \\\\#escaping"`;
 
 exports[`render fixtures escaping-code.js 1`] = `"Separate \\\\\`code escaping\\\\\` test for future"`;

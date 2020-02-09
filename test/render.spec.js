@@ -3,6 +3,8 @@ const path = require("path");
 
 const render = require("../");
 
+const fixturesPath = path.resolve(__dirname, "__fixtures__");
+
 describe("render", () => {
   it("should render nothing to empty string", () => {
     expect(render("")).toBe("");
@@ -10,8 +12,6 @@ describe("render", () => {
   });
 
   describe("fixtures", () => {
-    const fixturesPath = path.resolve(__dirname, "__fixtures__");
-
     fs.readdirSync(fixturesPath).forEach(filename => {
       const filepath = path.resolve(fixturesPath, filename);
       const data = require(filepath);

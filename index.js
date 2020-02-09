@@ -1,6 +1,5 @@
 const { parse: parseUrl, format: formatUrl } = require("url");
 
-const EmoticonsRegexp = require("emoji-regex")();
 const TwitterStatusIdRegexp = /\/status\/(\w+)$/;
 
 const TwitterHost = "twitter.com";
@@ -98,46 +97,64 @@ function renderEntity(type, data) {
   }
 }
 
-function processText(original, replacements) {
-  // replacing two-byte emoticons with private use unicode symbol
-  const emoticons = [];
-  const text = original.replace(EmoticonsRegexp, match => {
-    emoticons.push(match);
-    return "\u0091";
-  });
+const unicodeCharAt = (string, index) => {
+  const first = string.charCodeAt(index);
 
-  let lastPos = text.length;
-  const parts = replacements
-    .sort((a, b) => b[1] - a[1])
-    .map(replacement => {
-      let output = [replacement[0]];
-
-      if (replacement[2] < lastPos) {
-        output.push(
-          escapeMarkdownPart(
-            text.substr(replacement[2], lastPos - replacement[2])
-          )
-        );
-      }
-
-      lastPos = replacement[1];
-
-      return output.join("");
-    });
-
-  if (lastPos > 0) {
-    parts.push(escapeMarkdown(text.substr(0, lastPos)));
+  if (first >= 0xd800 && first <= 0xdbff && string.length > index + 1) {
+    const second = string.charCodeAt(index + 1);
+    if (second >= 0xdc00 && second <= 0xdfff) {
+      return string.substring(index, index + 2);
+    }
   }
 
-  return (
-    parts
-      .reverse()
-      .join("")
-      // bringing back emoticons
-      .replace(/\u{0091}/gu, () => {
-        return emoticons.shift();
-      })
-  );
+  return string[index];
+};
+
+const unicodeSlice = (string, start, end = string.length) => {
+  if (start == end) {
+    return "";
+  }
+
+  const accumulator = [];
+  let character;
+  let stringIndex = 0;
+  let unicodeIndex = 0;
+  const length = string.length;
+
+  while (stringIndex < length) {
+    character = unicodeCharAt(string, stringIndex);
+    if (unicodeIndex >= start && unicodeIndex < end) {
+      accumulator.push(character);
+    }
+    stringIndex += character.length;
+    unicodeIndex += 1;
+  }
+
+  return accumulator.join("");
+};
+
+function processText(text, replacements) {
+  let processed = text;
+  let lastPos = 0;
+
+  const parts = replacements
+    .sort((a, b) => a[1] - b[1])
+    .reduce((parts, repl) => {
+      const [replacement, start, end] = repl;
+
+      parts.push(
+        escapeMarkdownPart(unicodeSlice(text, lastPos, start)),
+        replacement
+      );
+
+      lastPos = end;
+
+      return parts;
+    }, []);
+
+  parts.push(escapeMarkdown(unicodeSlice(text, lastPos)));
+
+  return parts.join("");
 }
 
 function getStatusIdFromUrlEntity(entity) {

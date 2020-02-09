@@ -38,9 +38,7 @@
   "engines": {
     "node": ">=8.0.0"
   },
-  "dependencies": {
-    "emoji-regex": "^8.0.0"
-  },
+  "dependencies": {},
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged"
