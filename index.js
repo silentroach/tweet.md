@@ -8,17 +8,17 @@ const TwitterUrlParsed = parseUrl(`https://${TwitterHost}`);
 const getTwitterUrl = (pathname, query) =>
   formatUrl({ ...TwitterUrlParsed, pathname, query });
 
-function getTwitterHashUrl(query, source) {
+const getTwitterHashUrl = (query, source) => {
   const parameters = { q: `#${query}` };
   if (undefined !== source) {
     parameters.src = source;
   }
 
   return getTwitterUrl("search", parameters);
-}
+};
 
-function escapeMarkdownPart(input) {
-  return [
+const escapeMarkdownPart = input =>
+  [
     // escaping symbols: # * ( ) [ ] _ `
     [/([\#\*\(\)\[\]\_\`\\])/g, "\\$1"],
 
@@ -32,53 +32,60 @@ function escapeMarkdownPart(input) {
     (input, [replaceFrom, replaceTo]) => input.replace(replaceFrom, replaceTo),
     input
   );
-}
 
 const escapeMarkdown = input =>
   escapeMarkdownPart(input)
     // escaping period after number at the string start
     .replace(/^(\d+)\./, "$1\\.");
 
-function renderQuote(data) {
-  const content = module
-    .exports(data)
-    .split("\n")
-    .map(row => `> ${row}`)
-    .join("\n");
+const renderMarkdownLink = (name, url, title) => {
+  const parts = [url];
+  if (title) {
+    parts.push(`"${title}"`);
+  }
 
-  return `
-${content}`;
-}
+  return `[${name}](${parts.join(" ")})`;
+};
 
-function renderEntityMention(data) {
-  const url = getTwitterUrl(data.screen_name);
+const renderMarkdownLinkName = (name, prefix) => {
+  const data = [escapeMarkdownPart(name)];
+  if (prefix) {
+    data.unshift(prefix);
+  }
 
-  return `[@${escapeMarkdownPart(data.screen_name)}](${url} "${data.name}")`;
-}
+  return data.join("");
+};
 
-function renderEntityMedia(data) {
-  return `[${escapeMarkdownPart(data.display_url)}](${data.url})`;
-}
+const renderEntityMedia = data =>
+  renderMarkdownLink(data.display_url, data.url);
 
-function renderEntityHashtag(data) {
-  const url = getTwitterHashUrl(data.text);
+const renderEntityMention = data =>
+  renderMarkdownLink(
+    renderMarkdownLinkName(data.screen_name, "@"),
+    getTwitterUrl(data.screen_name),
+    data.name
+  );
 
-  return `[#${escapeMarkdownPart(data.text)}](${url})`;
-}
+const renderEntityHashtag = data =>
+  renderMarkdownLink(
+    renderMarkdownLinkName(data.text, "#"),
+    getTwitterHashUrl(data.text)
+  );
 
-function renderEntitySymbol(data) {
-  const url = getTwitterHashUrl(data.text, "ctag");
+const renderEntitySymbol = data =>
+  renderMarkdownLink(
+    renderMarkdownLinkName(data.text, "$"),
+    getTwitterHashUrl(data.text, "ctag")
+  );
 
-  return `[$${escapeMarkdownPart(data.text)}](${url})`;
-}
-
-function renderEntityUrl(data) {
-  return `[${escapeMarkdownPart(data.display_url)}](${data.url} "${
+const renderEntityUrl = data =>
+  renderMarkdownLink(
+    renderMarkdownLinkName(data.display_url),
+    data.url,
     data.expanded_url
-  }")`;
-}
+  );
 
-function renderEntity(type, data) {
+const renderEntity = (type, data) => {
   if (data.skip) return;
 
   switch (type) {
@@ -95,7 +102,7 @@ function renderEntity(type, data) {
     default:
       return null;
   }
-}
+};
 
 const unicodeCharAt = (string, index) => {
   const first = string.charCodeAt(index);
@@ -133,7 +140,7 @@ const unicodeSlice = (string, start, end = string.length) => {
   return accumulator.join("");
 };
 
-function processText(text, replacements) {
+const processText = (text, replacements) => {
   let processed = text;
   let lastPos = 0;
 
@@ -155,9 +162,9 @@ function processText(text, replacements) {
   parts.push(escapeMarkdown(unicodeSlice(text, lastPos)));
 
   return parts.join("");
-}
+};
 
-function getStatusIdFromUrlEntity(entity) {
+const getStatusIdFromUrlEntity = entity => {
   const { expanded_url: url } = entity;
   if (!url) return;
 
@@ -166,9 +173,9 @@ function getStatusIdFromUrlEntity(entity) {
 
   const statusMatch = parsed.path.match(TwitterStatusIdRegexp);
   return statusMatch && statusMatch[1];
-}
+};
 
-module.exports = function(tweet = {}) {
+const renderTweet = (tweet = {}) => {
   const source = tweet.extended_tweet || tweet;
 
   const entities = Object.assign({}, source.entities);
@@ -207,3 +214,15 @@ module.exports = function(tweet = {}) {
 
   return [output, quote && renderQuote(quote)].filter(Boolean).join("\n");
 };
+
+const renderQuote = data => {
+  const content = renderTweet(data)
+    .split("\n")
+    .map(row => `> ${row}`)
+    .join("\n");
+
+  return `
+${content}`;
+};
+
+module.exports = renderTweet;
