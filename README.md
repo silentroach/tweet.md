@@ -58,7 +58,14 @@ Via [@bustle](https://twitter.com/bustle "Bustle"), learn how to wax poetic on T
 
 ### [05-emoji.json](examples/05-emoji.json)
 
-Keep your Tweets 💯 by adding emojis every day, but especially on [#WorldEmojiDay](https://twitter.com/search?q=%23WorldEmojiDay)! 💪😂👯
+Twitter libraries are a great way to use our API. Did you know:
+
+✨ 100+ libraries support the Twitter API  
+✨ In 25+ programming languages 🐍☕️♦️
+
+Explore our curated list of community built libraries 📚
+
+[developer.twitter.com/en/docs/develo…](https://t.co/mgXiWmt9SY "https://developer.twitter.com/en/docs/developer-utilities/twitter-libraries")
 
 ---
 
