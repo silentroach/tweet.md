@@ -8,8 +8,7 @@
     "preversion": "npm run examples",
     "prepublish": "npm run test && npm run examples",
     "coverage": "jest --coverage",
-    "test": "jest",
-    "travis": "npm run coverage; cat ./coverage/lcov.info | coveralls"
+    "test": "jest"
   },
   "files": [
     "index.js"
