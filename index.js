@@ -17,23 +17,23 @@ const getTwitterHashUrl = (query, source) => {
   return getTwitterUrl("search", parameters);
 };
 
-const escapeMarkdownPart = input =>
+const escapeMarkdownPart = (input) =>
   [
     // escaping symbols: # * ( ) [ ] _ `
-    [/([\#\*\(\)\[\]\_\`\\])/g, "\\$1"],
+    [/([#*()\[\]_`\\])/g, "\\$1"],
 
     // escaping less and more signs
-    [/\</g, "&lt;"],
-    [/\>/g, "&gt;"],
+    [/</g, "&lt;"],
+    [/>/g, "&gt;"],
 
     // convert line break into markdown hardbrake
-    [/\n/g, "  \n"]
+    [/\n/g, "  \n"],
   ].reduce(
     (input, [replaceFrom, replaceTo]) => input.replace(replaceFrom, replaceTo),
     input
   );
 
-const escapeMarkdown = input =>
+const escapeMarkdown = (input) =>
   escapeMarkdownPart(input)
     // escaping period after number at the string start
     .replace(/^(\d+)\./, "$1\\.");
@@ -56,29 +56,29 @@ const renderMarkdownLinkName = (name, prefix) => {
   return data.join("");
 };
 
-const renderEntityMedia = data =>
+const renderEntityMedia = (data) =>
   renderMarkdownLink(data.display_url, data.url);
 
-const renderEntityMention = data =>
+const renderEntityMention = (data) =>
   renderMarkdownLink(
     renderMarkdownLinkName(data.screen_name, "@"),
     getTwitterUrl(data.screen_name),
     data.name
   );
 
-const renderEntityHashtag = data =>
+const renderEntityHashtag = (data) =>
   renderMarkdownLink(
     renderMarkdownLinkName(data.text, "#"),
     getTwitterHashUrl(data.text)
   );
 
-const renderEntitySymbol = data =>
+const renderEntitySymbol = (data) =>
   renderMarkdownLink(
     renderMarkdownLinkName(data.text, "$"),
     getTwitterHashUrl(data.text, "ctag")
   );
 
-const renderEntityUrl = data =>
+const renderEntityUrl = (data) =>
   renderMarkdownLink(
     renderMarkdownLinkName(data.display_url),
     data.url,
@@ -164,7 +164,7 @@ const processText = (text, replacements) => {
   return parts.join("");
 };
 
-const getStatusIdFromUrlEntity = entity => {
+const getStatusIdFromUrlEntity = (entity) => {
   const { expanded_url: url } = entity;
   if (!url) return;
 
@@ -184,7 +184,7 @@ const renderTweet = (tweet = {}) => {
   const { quoted_status: quote } = source;
 
   const replacements = [];
-  Object.keys(entities).forEach(entityKey => {
+  Object.keys(entities).forEach((entityKey) => {
     const entityList = entities[entityKey];
 
     // we should skip last link if it is a quote link
@@ -198,12 +198,12 @@ const renderTweet = (tweet = {}) => {
 
     replacements.push(
       ...entityList
-        .map(entity => {
+        .map((entity) => {
           const [start, end] = entity.indices;
           return [renderEntity(entityKey, entity), start, end];
         })
         // do not add anything unknown
-        .filter(data => null !== data[0])
+        .filter((data) => null !== data[0])
     );
   });
 
@@ -215,10 +215,10 @@ const renderTweet = (tweet = {}) => {
   return [output, quote && renderQuote(quote)].filter(Boolean).join("\n");
 };
 
-const renderQuote = data => {
+const renderQuote = (data) => {
   const content = renderTweet(data)
     .split("\n")
-    .map(row => `> ${row}`)
+    .map((row) => `> ${row}`)
     .join("\n");
 
   return `
