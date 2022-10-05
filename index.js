@@ -17,18 +17,20 @@ const getTwitterHashUrl = (query, source) => {
   return getTwitterUrl("search", parameters);
 };
 
+const escapeReplacements = [
+  // escaping symbols: # * ( ) [ ] _ `
+  [/([#*()\[\]_`\\])/g, "\\$1"],
+
+  // escaping less and more signs
+  [/</g, "&lt;"],
+  [/>/g, "&gt;"],
+
+  // convert line break into markdown hard break
+  [/\n/g, "  \n"],
+];
+
 const escapeMarkdownPart = (input) =>
-  [
-    // escaping symbols: # * ( ) [ ] _ `
-    [/([#*()\[\]_`\\])/g, "\\$1"],
-
-    // escaping less and more signs
-    [/</g, "&lt;"],
-    [/>/g, "&gt;"],
-
-    // convert line break into markdown hardbrake
-    [/\n/g, "  \n"],
-  ].reduce(
+  escapeReplacements.reduce(
     (input, [replaceFrom, replaceTo]) => input.replace(replaceFrom, replaceTo),
     input
   );
@@ -100,7 +102,7 @@ const renderEntity = (type, data) => {
     case "symbols":
       return renderEntitySymbol(data);
     default:
-      return null;
+      return null; // not undefined!
   }
 };
 
@@ -118,7 +120,7 @@ const unicodeCharAt = (string, index) => {
 };
 
 const unicodeSlice = (string, start, end = string.length) => {
-  if (start == end) {
+  if (start === end) {
     return "";
   }
 
@@ -141,7 +143,6 @@ const unicodeSlice = (string, start, end = string.length) => {
 };
 
 const processText = (text, replacements) => {
-  let processed = text;
   let lastPos = 0;
 
   const parts = replacements
