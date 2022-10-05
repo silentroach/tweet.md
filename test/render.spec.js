@@ -1,5 +1,5 @@
-const fs = require("fs");
-const path = require("path");
+const fs = require("node:fs");
+const path = require("node:path");
 
 const render = require("../");
 
@@ -12,7 +12,7 @@ describe("render", () => {
   });
 
   describe("fixtures", () => {
-    fs.readdirSync(fixturesPath).forEach(filename => {
+    fs.readdirSync(fixturesPath).forEach((filename) => {
       const filepath = path.resolve(fixturesPath, filename);
       const data = require(filepath);
 

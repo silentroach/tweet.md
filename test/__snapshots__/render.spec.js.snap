@@ -2,7 +2,7 @@
 
 exports[`render fixtures ctags.js 1`] = `"[$APPL](https://twitter.com/search?q=%23APPL&src=ctag) set to jump this morning. General rebound in the market today. Yesterday was a good time to buy into the panic."`;
 
-exports[`render fixtures emoticon.js 1`] = `"Testing emoticons 🌞 with ⚽ links [twitter.com](http://t.co/AOZu04FpJG \\"http://twitter.com\\")"`;
+exports[`render fixtures emoticon.js 1`] = `"Testing emoticons 🌞 with ⚽ links [twitter.com](http://t.co/AOZu04FpJG "http://twitter.com")"`;
 
 exports[`render fixtures emoticon2.js 1`] = `
 "Twitter libraries are a great way to use our API. Did you know:  
@@ -12,29 +12,29 @@ exports[`render fixtures emoticon2.js 1`] = `
   
 Explore our curated list of community built libraries 📚  
   
-[developer.twitter.com/en/docs/develo…](https://t.co/mgXiWmt9SY \\"https://developer.twitter.com/en/docs/developer-utilities/twitter-libraries\\")"
+[developer.twitter.com/en/docs/develo…](https://t.co/mgXiWmt9SY "https://developer.twitter.com/en/docs/developer-utilities/twitter-libraries")"
 `;
 
-exports[`render fixtures escaping.js 1`] = `"Just\\\\[\\\\] \\\\*test \\\\_the \\\\(mark&gt;&lt;down\\\\) \\\\\\\\ \\\\#escaping"`;
+exports[`render fixtures escaping.js 1`] = `"Just\\[\\] \\*test \\_the \\(mark&gt;&lt;down\\) \\\\ \\#escaping"`;
 
-exports[`render fixtures escaping-code.js 1`] = `"Separate \\\\\`code escaping\\\\\` test for future"`;
+exports[`render fixtures escaping-code.js 1`] = `"Separate \\\`code escaping\\\` test for future"`;
 
-exports[`render fixtures escaping-first-number.js 1`] = `"1234\\\\. Escape the period after number at the beginning of the string"`;
+exports[`render fixtures escaping-first-number.js 1`] = `"1234\\. Escape the period after number at the beginning of the string"`;
 
-exports[`render fixtures escaping-nickname.js 1`] = `"[@\\\\_h4\\\\_](https://twitter.com/_h4_ \\"Наполеон Бонапарт\\") done"`;
+exports[`render fixtures escaping-nickname.js 1`] = `"[@\\_h4\\_](https://twitter.com/_h4_ "Наполеон Бонапарт") done"`;
 
-exports[`render fixtures extended.js 1`] = `"should prefer extended\\\\_tweet over base"`;
+exports[`render fixtures extended.js 1`] = `"should prefer extended\\_tweet over base"`;
 
-exports[`render fixtures full-text.js 1`] = `"should prefer full\\\\_text over text"`;
+exports[`render fixtures full-text.js 1`] = `"should prefer full\\_text over text"`;
 
-exports[`render fixtures links.js 1`] = `"[webpack.github.io/docs/hot-modul…](http://t.co/rYdyv2gX12 \\"http://webpack.github.io/docs/hot-module-replacement-with-webpack.html\\"), [webpack.github.io/docs/hot-modul…](http://t.co/32mCbc9Jyr \\"http://webpack.github.io/docs/hot-module-replacement.html\\")"`;
+exports[`render fixtures links.js 1`] = `"[webpack.github.io/docs/hot-modul…](http://t.co/rYdyv2gX12 "http://webpack.github.io/docs/hot-module-replacement-with-webpack.html"), [webpack.github.io/docs/hot-modul…](http://t.co/32mCbc9Jyr "http://webpack.github.io/docs/hot-module-replacement.html")"`;
 
 exports[`render fixtures multiline.js 1`] = `
 "Something with multiple  
 lines"
 `;
 
-exports[`render fixtures multiple.js 1`] = `"RT [@miripiruni](https://twitter.com/miripiruni \\"Slava Oliyanchuk\\"): [#TIL](https://twitter.com/search?q=%23TIL) [#nodejs](https://twitter.com/search?q=%23nodejs) [pic.twitter.com/VXj36cneyb](http://t.co/VXj36cneyb)"`;
+exports[`render fixtures multiple.js 1`] = `"RT [@miripiruni](https://twitter.com/miripiruni "Slava Oliyanchuk"): [#TIL](https://twitter.com/search?q=%23TIL) [#nodejs](https://twitter.com/search?q=%23nodejs) [pic.twitter.com/VXj36cneyb](http://t.co/VXj36cneyb)"`;
 
 exports[`render fixtures no-entities.js 1`] = `"Some text"`;
 
