@@ -12,8 +12,8 @@ module.exports = {
         expanded_url:
           "https://developer.twitter.com/en/docs/developer-utilities/twitter-libraries",
         display_url: "developer.twitter.com/en/docs/develo…",
-        indices: [202, 225]
-      }
-    ]
-  }
+        indices: [202, 225],
+      },
+    ],
+  },
 };

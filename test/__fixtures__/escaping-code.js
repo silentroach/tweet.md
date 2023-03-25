@@ -1,3 +1,3 @@
 module.exports = {
-  text: "Separate `code escaping` test for future"
+  text: "Separate `code escaping` test for future",
 };

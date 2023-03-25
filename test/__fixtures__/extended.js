@@ -4,6 +4,6 @@ module.exports = {
 
   extended_tweet: {
     text: "some other original text",
-    full_text: "should prefer extended_tweet over base"
-  }
+    full_text: "should prefer extended_tweet over base",
+  },
 };

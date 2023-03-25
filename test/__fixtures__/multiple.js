@@ -4,12 +4,12 @@ module.exports = {
     hashtags: [
       {
         text: "TIL",
-        indices: [16, 20]
+        indices: [16, 20],
       },
       {
         text: "nodejs",
-        indices: [21, 28]
-      }
+        indices: [21, 28],
+      },
     ],
     user_mentions: [
       {
@@ -17,8 +17,8 @@ module.exports = {
         name: "Slava Oliyanchuk",
         id: 10692322,
         id_str: "10692322",
-        indices: [3, 14]
-      }
+        indices: [3, 14],
+      },
     ],
     media: [
       {
@@ -36,29 +36,29 @@ module.exports = {
           thumb: {
             w: 150,
             h: 150,
-            resize: "crop"
+            resize: "crop",
           },
           large: {
             w: 1024,
             h: 357,
-            resize: "fit"
+            resize: "fit",
           },
           medium: {
             w: 600,
             h: 209,
-            resize: "fit"
+            resize: "fit",
           },
           small: {
             w: 340,
             h: 118,
-            resize: "fit"
-          }
+            resize: "fit",
+          },
         },
         source_status_id: 615450610914213900,
         source_status_id_str: "615450610914213888",
         source_user_id: 10692322,
-        source_user_id_str: "10692322"
-      }
-    ]
-  }
+        source_user_id_str: "10692322",
+      },
+    ],
+  },
 };

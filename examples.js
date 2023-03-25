@@ -9,13 +9,13 @@ const splitter = "<!-- CUT -->";
 
 const examplesData = fs
   .readdirSync(examplesPath)
-  .map(filename => {
+  .map((filename) => {
     const examplePath = path.resolve(examplesPath, filename);
     const relativePath = path.relative(__dirname, examplePath);
 
     const tweetData = JSON.parse(
       fs.readFileSync(examplePath, {
-        encoding: "utf-8"
+        encoding: "utf-8",
       })
     );
 
@@ -28,7 +28,7 @@ ${render(tweetData)}
 
 const [heading] = fs
   .readFileSync(readmePath, {
-    encoding: "utf-8"
+    encoding: "utf-8",
   })
   .split(splitter);
 

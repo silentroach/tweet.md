@@ -6,8 +6,8 @@ module.exports = {
         url: "http://t.co/AOZu04FpJG",
         expanded_url: "http://twitter.com",
         display_url: "twitter.com",
-        indices: [33, 55]
-      }
-    ]
-  }
+        indices: [33, 55],
+      },
+    ],
+  },
 };

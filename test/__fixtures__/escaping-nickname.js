@@ -9,9 +9,9 @@ module.exports = {
         name: "Наполеон Бонапарт",
         id: 15020265,
         id_str: "15020265",
-        indices: [0, 5]
-      }
+        indices: [0, 5],
+      },
     ],
-    urls: []
-  }
+    urls: [],
+  },
 };

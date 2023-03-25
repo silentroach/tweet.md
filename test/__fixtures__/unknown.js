@@ -3,8 +3,8 @@ module.exports = {
   entities: {
     unknown: [
       {
-        indices: [0, 10]
-      }
-    ]
-  }
+        indices: [0, 10],
+      },
+    ],
+  },
 };

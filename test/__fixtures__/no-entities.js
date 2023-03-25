@@ -1,3 +1,3 @@
 module.exports = {
-  text: "Some text"
+  text: "Some text",
 };
