@@ -35,7 +35,7 @@ export type TweetEntity =
 
 export interface Tweet {
   id:
-    | number // unsafe
+    | number // unsafe, old
     | string; // new format
   id_str?: string;
   entities: {
