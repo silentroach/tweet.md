@@ -5,8 +5,8 @@ it("renders symbol", () => {
     symbol({
       indices: [0, 1],
       text: "APPL",
-    })
+    }),
   ).toMatchInlineSnapshot(
-    `"[$APPL](https://twitter.com/search?q=%23APPL&src=ctag)"`
+    `"[$APPL](https://twitter.com/search?q=%23APPL&src=ctag)"`,
   );
 });

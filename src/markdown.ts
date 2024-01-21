@@ -13,7 +13,7 @@ const replacements: Array<[RegExp, string]> = [
 export const escapePart = (input: string): string =>
   replacements.reduce(
     (input, [replaceFrom, replaceTo]) => input.replace(replaceFrom, replaceTo),
-    input
+    input,
   );
 
 export const escape = (input: string): string =>

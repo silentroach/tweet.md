@@ -23,7 +23,7 @@ const processText = (text: string, replacements: Replacement[]): string => {
 
       parts.push(
         escapeMarkdownPart(unicodeSlice(text, lastPos, start)),
-        replacement
+        replacement,
       );
 
       lastPos = end;
@@ -72,7 +72,7 @@ export const tweet = (data: Tweet): string => {
           return [rendered, start, end];
         })
         // do not add anything unknown
-        .filter((data): data is Replacement => data !== undefined)
+        .filter((data): data is Replacement => data !== undefined),
     );
   }
 

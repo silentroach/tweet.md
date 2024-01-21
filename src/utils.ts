@@ -3,13 +3,13 @@ type ObjectEntry<T> = {
 }[Exclude<keyof T, undefined>];
 
 export const objectEntries = Object.entries as <T>(
-  o: T
+  o: T,
 ) => Array<ObjectEntry<T>>;
 
 export const unicodeSlice = (
   string: string,
   start: number,
-  end = string.length
+  end = string.length,
 ): string => {
   if (start === end) {
     return "";

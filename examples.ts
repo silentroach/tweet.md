@@ -19,7 +19,7 @@ const examplesData = readdirSync(examplesPath)
     const tweetData = parse(
       readFileSync(examplePath, {
         encoding: "utf-8",
-      })
+      }),
     );
 
     return `### [${filename}](${relativePath})
@@ -39,5 +39,5 @@ writeFileSync(
 
 ${examplesData}
 `,
-  { encoding: "utf-8" }
+  { encoding: "utf-8" },
 );

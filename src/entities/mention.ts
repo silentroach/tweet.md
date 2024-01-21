@@ -6,5 +6,5 @@ export const mention = (data: UserMentionEntity): string =>
   link(
     `@${escapePart(data.screen_name)}`,
     getTwitterUrl(data.screen_name),
-    data.name
+    data.name,
   );

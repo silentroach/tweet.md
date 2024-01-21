@@ -5,7 +5,7 @@ const TwitterStatusIdRegexp = /\/status\/(\w+)$/;
 const TwitterBaseUrl = `https://${TwitterHost}`;
 
 export const getStatusIdFromUrlEntity = (
-  entity: UrlEntity
+  entity: UrlEntity,
 ): string | undefined => {
   const { expanded_url: url } = entity;
   if (!url) return;
@@ -23,7 +23,7 @@ export const getStatusIdFromUrlEntity = (
 
 export const getTwitterUrl = (
   pathname: string,
-  query?: Record<string, string>
+  query?: Record<string, string>,
 ): string => {
   const url = new URL(TwitterBaseUrl);
   url.pathname = pathname;

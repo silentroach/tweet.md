@@ -16,7 +16,7 @@ import { url } from "./url";
 function entity(type: "urls", data: UrlEntity): string | undefined;
 function entity(
   type: "user_mentions",
-  data: UserMentionEntity
+  data: UserMentionEntity,
 ): string | undefined;
 function entity(type: "media", data: MediaEntity): string | undefined;
 function entity(type: "hashtags", data: HashTagEntity): string | undefined;
