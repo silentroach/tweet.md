@@ -2,17 +2,19 @@
   "name": "tweet.md",
   "version": "3.1.0",
   "description": "Render tweet to markdown",
-  "main": "index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "examples": "node examples.js",
+    "examples": "ts-node examples.ts",
     "preversion": "npm run examples",
-    "prepublish": "npm run test && npm run examples",
+    "prepublish": "npm run test && npm run examples && npm run build",
+    "build": "parcel build --no-content-hash --no-cache src/index.ts  --detailed-report",
     "coverage": "jest --coverage",
     "test": "jest",
     "prepare": "husky install"
   },
   "files": [
-    "index.js"
+    "dist/*"
   ],
   "keywords": [
     "twitter",
@@ -31,14 +33,41 @@
     "Martin Giger <martin@humanoids.be> (https://github.com/freaktechnik)"
   ],
   "license": "MIT",
+  "lint-staged": {
+    "*": "prettier --write --ignore-unknown"
+  },
   "devDependencies": {
-    "coveralls": "^3.1.0",
+    "@parcel/config-default": "^2.11.0",
+    "@parcel/packager-ts": "^2.11.0",
+    "@parcel/transformer-typescript-types": "^2.11.0",
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@types/jest": "^29.5.11",
+    "@types/node": "^20.11.5",
     "husky": "^8.0.1",
     "jest": "^29.1.2",
-    "prettier": "^2.2.0",
-    "pretty-quick": "^3.1.0"
+    "json5": "^2.2.3",
+    "lint-staged": "^15.2.0",
+    "parcel": "^2.11.0",
+    "prettier": "^2.8.8",
+    "punycode": "^1.4.1",
+    "ts-jest": "^29.1.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3",
+    "url": "^0.11.3"
   },
   "engines": {
-    "node": ">=10.0.0"
+    "node": ">=18.0.0"
+  },
+  "prettier": {
+    "plugins": [
+      "@trivago/prettier-plugin-sort-imports"
+    ],
+    "importOrder": [
+      "^node:.*$",
+      "<THIRD_PARTY_MODULES>",
+      "^[./]"
+    ],
+    "importOrderSeparation": true,
+    "importOrderSortSpecifiers": true
   }
 }
