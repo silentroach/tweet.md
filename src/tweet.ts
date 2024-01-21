@@ -50,8 +50,9 @@ export const tweet = (data: Tweet): string => {
     // we should skip last link if it is a quote link
     if (quoted && "urls" === entityType && entities.length > 0) {
       const lastLink = entities.at(-1)!;
+      const quoteId = typeof quoted.id === "string" ? quoted.id : quoted.id_str;
 
-      if (getStatusIdFromUrlEntity(lastLink) === quoted.id_str) {
+      if (getStatusIdFromUrlEntity(lastLink) === quoteId) {
         skipList.add(lastLink);
       }
     }

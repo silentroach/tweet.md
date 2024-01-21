@@ -34,7 +34,10 @@ export type TweetEntity =
   | MediaEntity;
 
 export interface Tweet {
-  id_str: string;
+  id:
+    | number // unsafe
+    | string; // new format
+  id_str?: string;
   entities: {
     hashtags: HashTagEntity[];
     urls: UrlEntity[];
