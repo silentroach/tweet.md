@@ -1,0 +1,25 @@
+{
+	"compilerOptions": {
+		"outDir": "dist",
+	
+		"moduleResolution": "node",
+
+		"target": "es2022",
+		"lib": ["esnext"],
+
+		"strict": true,
+		"sourceMap": true,
+
+		"declaration": true,
+
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+
+		"pretty": true,
+		"resolveJsonModule": true,
+
+		"noUnusedLocals": true,
+		"noImplicitAny": true
+	},
+	"exclude": ["./node_modules"]
+}

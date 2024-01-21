@@ -1,0 +1,17 @@
+{
+  text: "@_h4_ done",
+  entities: {
+    hashtags: [],
+    symbols: [],
+    user_mentions: [
+      {
+        screen_name: "_h4_",
+        name: "Наполеон Бонапарт",
+        id: 15020265,
+        id_str: "15020265",
+        indices: [0, 5],
+      },
+    ],
+    urls: [],
+  },
+}
