@@ -1,25 +1,26 @@
 {
-	"compilerOptions": {
-		"outDir": "dist",
-	
-		"moduleResolution": "node",
+  "compilerOptions": {
+    "outDir": "dist",
 
-		"target": "es2022",
-		"lib": ["esnext"],
+    "moduleResolution": "node",
 
-		"strict": true,
-		"sourceMap": true,
+    "target": "es2022",
+    "lib": ["esnext"],
+    "types": ["node", "jest"],
 
-		"declaration": true,
+    "strict": true,
+    "sourceMap": true,
 
-		"esModuleInterop": true,
-		"allowSyntheticDefaultImports": true,
+    "declaration": true,
 
-		"pretty": true,
-		"resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
 
-		"noUnusedLocals": true,
-		"noImplicitAny": true
-	},
-	"exclude": ["./node_modules"]
+    "pretty": true,
+    "resolveJsonModule": true,
+
+    "noUnusedLocals": true,
+    "noImplicitAny": true,
+  },
+  "exclude": ["./node_modules"],
 }
