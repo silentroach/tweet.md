@@ -6,7 +6,10 @@ updates:
       interval: "weekly"
       day: "friday"
     groups:
-      production-dependencies:
+      types:
+        patterns:
+          - "@types/*"
+      production:
         dependency-type: "production"
-      development-dependencies:
+      development:
         dependency-type: "development"
