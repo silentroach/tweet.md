@@ -44,7 +44,7 @@ Removing the 140 character limit from Direct Messages [twittercommunity.com/t/re
 ### [02-multiline.json5](examples/02-multiline.json5)
 
 Tweet poems you like  
-at [#TwitterPoetryClub](https://twitter.com/search?q=%23TwitterPoetryClub)
+at [#TwitterPoetryClub](https://twitter.com/search?q=%23TwitterPoetryClub)  
 prose, sonnets and more  
 
 Via [@bustle](https://twitter.com/bustle "Bustle"), learn how to wax poetic on Twitter: [bustle.com/articles/10068…](http://t.co/vItyyGqX7R "http://www.bustle.com/articles/100683-twitterpoetryclub-members-share-their-love-of-poetry-in-140-characters-or-less")

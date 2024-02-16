@@ -34,7 +34,12 @@ const processText = (text: string, replacements: Replacement[]): string => {
 
   parts.push(escapeMarkdown(unicodeSlice(text, lastPos)));
 
-  return parts.join("");
+  return (
+    parts
+      .join("")
+      // removing hard breaks on empty paragraphs
+      .replace(/\n  \n/g, "\n\n")
+  );
 };
 
 export const tweet = (data: Tweet, options?: Options): string => {
