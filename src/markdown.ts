@@ -7,7 +7,7 @@ const replacements: Array<[RegExp, string]> = [
   [/>/g, "&gt;"],
 
   // convert line break into markdown hard break
-  [/\n/g, "  \n"],
+  [/(.+?)\n/g, "$1  \n"],
 ] as const;
 
 export const escapePart = (input: string): string =>
