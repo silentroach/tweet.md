@@ -6,12 +6,12 @@ exports[`emoticon.json5 1`] = `"Testing emoticons 🌞 with ⚽ links [twitter.c
 
 exports[`emoticon2.json5 1`] = `
 "Twitter libraries are a great way to use our API. Did you know:  
-  
+
 ✨ 100+ libraries support the Twitter API  
 ✨ In 25+ programming languages 🐍☕️♦️   
-  
+
 Explore our curated list of community built libraries 📚  
-  
+
 [developer.twitter.com/en/docs/develo…](https://t.co/mgXiWmt9SY "https://developer.twitter.com/en/docs/developer-utilities/twitter-libraries")"
 `;
 
@@ -37,6 +37,12 @@ lines"
 exports[`multiple.json5 1`] = `"RT [@miripiruni](https://twitter.com/miripiruni "Slava Oliyanchuk"): [#TIL](https://twitter.com/search?q=%23TIL) [#nodejs](https://twitter.com/search?q=%23nodejs) [pic.twitter.com/VXj36cneyb](http://t.co/VXj36cneyb)"`;
 
 exports[`no-entities.json5 1`] = `"Some text"`;
+
+exports[`quote above the text 1`] = `
+"> Some quote
+
+Some text"
+`;
 
 exports[`quote.json5 1`] = `
 "Some text

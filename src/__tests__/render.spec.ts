@@ -15,3 +15,13 @@ readdirSync(fixturesPath).forEach((filename) => {
     expect(renderTweet(data)).toMatchSnapshot();
   });
 });
+
+it("quote above the text", () => {
+  const data = parse(
+    readFileSync(resolve(fixturesPath, "quote.json5"), { encoding: "utf-8" }),
+  );
+
+  expect(
+    renderTweet(data, { render: { quotesAboveText: true } }),
+  ).toMatchSnapshot();
+});

@@ -3,6 +3,7 @@ import {
   escape as escapeMarkdown,
   escapePart as escapeMarkdownPart,
 } from "./markdown";
+import type { Options } from "./options";
 import { getStatusIdFromUrlEntity } from "./twitter";
 import type { Tweet } from "./types";
 import { objectEntries, unicodeSlice } from "./utils";
@@ -36,7 +37,7 @@ const processText = (text: string, replacements: Replacement[]): string => {
   return parts.join("");
 };
 
-export const tweet = (data: Tweet): string => {
+export const tweet = (data: Tweet, options?: Options): string => {
   const text =
     data.truncated && data.extended_tweet
       ? data.extended_tweet.full_text
@@ -77,17 +78,27 @@ export const tweet = (data: Tweet): string => {
     );
   }
 
-  return [processText(text, replacements), quoted && quote(quoted)]
-    .filter(Boolean)
-    .join("\n");
+  const rendered: string[] = [processText(text, replacements)];
+
+  if (quoted) {
+    const renderedQuote = quote(quoted);
+
+    if (options?.render?.quotesAboveText) {
+      rendered.unshift(renderedQuote);
+    } else {
+      rendered.push(renderedQuote);
+    }
+  }
+
+  return rendered.join("\n\n");
 };
 
-const quote = (data: Tweet): string => {
-  const content = tweet(data)
+const quote = (data: Tweet): string =>
+  tweet(data)
     .split("\n")
-    .map((row) => `> ${row}`)
+    .map((row) =>
+      `> ${row}`
+        // dont need extra double space line break inside quotes
+        .replace(/\s+$/, ""),
+    )
     .join("\n");
-
-  return `
-${content}`;
-};
