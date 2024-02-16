@@ -5,7 +5,7 @@
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "examples": "ts-node examples.ts && npx prettier --write README.md",
+    "examples": "ts-node examples.ts",
     "preversion": "npm run examples",
     "prepublish": "npm run test && npm run examples && npm run build",
     "build": "parcel build --no-content-hash --no-cache src/index.ts  --detailed-report",

@@ -27,7 +27,7 @@ const examplesData = readdirSync(examplesPath)
 ${renderTweet(tweetData)}
 `;
   })
-  .join("- - -\n\n");
+  .join("\n---\n\n");
 
 const [heading] = readFileSync(readmePath, {
   encoding: "utf-8",
