@@ -22,6 +22,6 @@ it("quote above the text", () => {
   );
 
   expect(
-    renderTweet(data, { render: { quotesAboveText: true } }),
+    renderTweet(data, { render: { quote: { aboveText: true } } }),
   ).toMatchSnapshot();
 });

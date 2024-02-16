@@ -24,8 +24,10 @@ const output = renderTweet(
   // + optional config
   {
     render: {
-      // render quoted text above tweet text (false by default)
-      quotesAboveText: true,
+      quote: {
+        // render quoted text above tweet text (false by default)
+        aboveText: true,
+      }
     },
   },
 );

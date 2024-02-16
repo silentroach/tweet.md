@@ -1,8 +1,12 @@
-interface RenderOptions {
+interface RenderQuoteOptions {
   /**
    * Render quotes above tweet text
    */
-  quotesAboveText?: boolean;
+  aboveText?: boolean;
+}
+
+interface RenderOptions {
+  quote?: RenderQuoteOptions;
 }
 
 export interface Options {

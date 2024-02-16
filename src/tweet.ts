@@ -88,7 +88,7 @@ export const tweet = (data: Tweet, options?: Options): string => {
   if (quoted) {
     const renderedQuote = quote(quoted);
 
-    if (options?.render?.quotesAboveText) {
+    if (options?.render?.quote?.aboveText) {
       rendered.unshift(renderedQuote);
     } else {
       rendered.push(renderedQuote);
