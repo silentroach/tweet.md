@@ -13,3 +13,4 @@ updates:
         dependency-type: "production"
       development:
         dependency-type: "development"
+    versioning-strategy: lockfile-only
