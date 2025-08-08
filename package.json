@@ -2,13 +2,21 @@
   "name": "tweet.md",
   "version": "4.1.0",
   "description": "Render tweet to markdown",
+  "type": "module",
+  "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
   "scripts": {
     "examples": "ts-node examples.ts",
     "preversion": "npm run examples",
     "prepublish": "npm run test && npm run examples && npm run build",
-    "build": "parcel build --no-content-hash --no-cache src/index.ts  --detailed-report",
+    "build": "vite build",
     "coverage": "vitest run --coverage",
     "test": "vitest run",
     "prepare": "husky install"
@@ -37,19 +45,17 @@
     "*": "prettier --write --ignore-unknown"
   },
   "devDependencies": {
-    "@parcel/config-default": "^2.11.0",
-    "@parcel/packager-ts": "^2.11.0",
-    "@parcel/transformer-typescript-types": "^2.11.0",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@types/node": "^22.3.0",
     "@vitest/coverage-v8": "^2.0.5",
     "husky": "^9.1.4",
     "json5": "^2.2.3",
     "lint-staged": "^15.2.0",
-    "parcel": "^2.11.0",
     "prettier": "^3.2.4",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3",
+    "vite": "^5.0.0",
+    "vite-plugin-dts": "^4.0.0",
     "vitest": "^2.0.5"
   },
   "engines": {
