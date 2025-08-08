@@ -1,10 +1,10 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`ctags.json5 1`] = `"[$APPL](https://twitter.com/search?q=%23APPL&src=ctag) set to jump this morning. General rebound in the market today. Yesterday was a good time to buy into the panic."`;
+exports[`renderTweet > ctags.json5 1`] = `"[$APPL](https://twitter.com/search?q=%23APPL&src=ctag) set to jump this morning. General rebound in the market today. Yesterday was a good time to buy into the panic."`;
 
-exports[`emoticon.json5 1`] = `"Testing emoticons 🌞 with ⚽ links [twitter.com](http://t.co/AOZu04FpJG "http://twitter.com")"`;
+exports[`renderTweet > emoticon.json5 1`] = `"Testing emoticons 🌞 with ⚽ links [twitter.com](http://t.co/AOZu04FpJG "http://twitter.com")"`;
 
-exports[`emoticon2.json5 1`] = `
+exports[`renderTweet > emoticon2.json5 1`] = `
 "Twitter libraries are a great way to use our API. Did you know:  
 
 ✨ 100+ libraries support the Twitter API  
@@ -15,39 +15,39 @@ Explore our curated list of community built libraries 📚
 [developer.twitter.com/en/docs/develo…](https://t.co/mgXiWmt9SY "https://developer.twitter.com/en/docs/developer-utilities/twitter-libraries")"
 `;
 
-exports[`escaping.json5 1`] = `"Just\\[\\] \\*test \\_the \\(mark&gt;&lt;down\\) \\\\ \\#escaping"`;
+exports[`renderTweet > escaping.json5 1`] = `"Just\\[\\] \\*test \\_the \\(mark&gt;&lt;down\\) \\\\ \\#escaping"`;
 
-exports[`escaping-code.json5 1`] = `"Separate \\\`code escaping\\\` test for future"`;
+exports[`renderTweet > escaping-code.json5 1`] = `"Separate \\\`code escaping\\\` test for future"`;
 
-exports[`escaping-first-number.json5 1`] = `"1234\\. Escape the period after number at the beginning of the string"`;
+exports[`renderTweet > escaping-first-number.json5 1`] = `"1234\\. Escape the period after number at the beginning of the string"`;
 
-exports[`escaping-nickname.json5 1`] = `"[@\\_h4\\_](https://twitter.com/_h4_ "Наполеон Бонапарт") done"`;
+exports[`renderTweet > escaping-nickname.json5 1`] = `"[@\\_h4\\_](https://twitter.com/_h4_ "Наполеон Бонапарт") done"`;
 
-exports[`extended.json5 1`] = `"some original text"`;
+exports[`renderTweet > extended.json5 1`] = `"some original text"`;
 
-exports[`full-text.json5 1`] = `"some original text"`;
+exports[`renderTweet > full-text.json5 1`] = `"some original text"`;
 
-exports[`links.json5 1`] = `"[webpack.github.io/docs/hot-modul…](http://t.co/rYdyv2gX12 "http://webpack.github.io/docs/hot-module-replacement-with-webpack.html"), [webpack.github.io/docs/hot-modul…](http://t.co/32mCbc9Jyr "http://webpack.github.io/docs/hot-module-replacement.html")"`;
+exports[`renderTweet > links.json5 1`] = `"[webpack.github.io/docs/hot-modul…](http://t.co/rYdyv2gX12 "http://webpack.github.io/docs/hot-module-replacement-with-webpack.html"), [webpack.github.io/docs/hot-modul…](http://t.co/32mCbc9Jyr "http://webpack.github.io/docs/hot-module-replacement.html")"`;
 
-exports[`multiline.json5 1`] = `
+exports[`renderTweet > multiline.json5 1`] = `
 "Something with multiple  
 lines"
 `;
 
-exports[`multiple.json5 1`] = `"RT [@miripiruni](https://twitter.com/miripiruni "Slava Oliyanchuk"): [#TIL](https://twitter.com/search?q=%23TIL) [#nodejs](https://twitter.com/search?q=%23nodejs) [pic.twitter.com/VXj36cneyb](http://t.co/VXj36cneyb)"`;
+exports[`renderTweet > multiple.json5 1`] = `"RT [@miripiruni](https://twitter.com/miripiruni "Slava Oliyanchuk"): [#TIL](https://twitter.com/search?q=%23TIL) [#nodejs](https://twitter.com/search?q=%23nodejs) [pic.twitter.com/VXj36cneyb](http://t.co/VXj36cneyb)"`;
 
-exports[`no-entities.json5 1`] = `"Some text"`;
+exports[`renderTweet > no-entities.json5 1`] = `"Some text"`;
 
-exports[`quote above the text 1`] = `
+exports[`renderTweet > quote above the text 1`] = `
 "> Some quote
 
 Some text"
 `;
 
-exports[`quote.json5 1`] = `
+exports[`renderTweet > quote.json5 1`] = `
 "Some text
 
 > Some quote"
 `;
 
-exports[`unknown.json5 1`] = `"Tweet data with some unknown entities will not break the text"`;
+exports[`renderTweet > unknown.json5 1`] = `"Tweet data with some unknown entities will not break the text"`;
