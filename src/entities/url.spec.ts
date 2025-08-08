@@ -1,6 +1,8 @@
+import { expect, test } from "vitest";
+
 import { url } from "./url";
 
-it("renders url", () => {
+test("renders url", () => {
   expect(
     url({
       url: "https://t.co/h0I2M3P2vm",
@@ -10,6 +12,6 @@ it("renders url", () => {
       indices: [54, 77],
     }),
   ).toMatchInlineSnapshot(
-    `"[twittercommunity.com/t/removing-the…](https://t.co/h0I2M3P2vm "https://twittercommunity.com/t/removing-the-140-character-limit-from-direct-messages/41348/")"`,
+    `"[twittercommunity.com/t/removing-the…](https://t.co/h0I2M3P2vm \"https://twittercommunity.com/t/removing-the-140-character-limit-from-direct-messages/41348/\")"`,
   );
 });

@@ -6,7 +6,7 @@
 
     "target": "es2022",
     "lib": ["esnext"],
-    "types": ["node", "jest"],
+    "types": ["node", "vitest"],
 
     "strict": true,
     "sourceMap": true,
@@ -20,7 +20,7 @@
     "resolveJsonModule": true,
 
     "noUnusedLocals": true,
-    "noImplicitAny": true,
+    "noImplicitAny": true
   },
-  "exclude": ["./node_modules"],
+  "exclude": ["./node_modules"]
 }

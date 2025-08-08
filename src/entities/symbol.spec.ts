@@ -1,6 +1,8 @@
+import { expect, test } from "vitest";
+
 import { symbol } from "./symbol";
 
-it("renders symbol", () => {
+test("renders symbol", () => {
   expect(
     symbol({
       indices: [0, 1],
